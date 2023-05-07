@@ -6,9 +6,9 @@ import type { ObjectData, ObjectDataType } from "./types";
 export default function filter<O extends Object, K extends ObjectDataType>(
     object : O,
     dataType : K,
-    predicate : (data : ObjectData<O>[K]) => boolean
+    handler : (data : ObjectData<O>[K]) => boolean
 ) : O {
-    return <O>Object.fromEntries(Object.entries(object).filter(data => predicate(
+    return <O>Object.fromEntries(Object.entries(object).filter(data => handler(
         dataType === 'keys' ? data[0] :
         dataType === 'values' ? data[1] :
         data

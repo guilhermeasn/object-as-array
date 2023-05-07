@@ -6,9 +6,9 @@ import type { ObjectData, ObjectDataType } from "./types";
 export default function sort<O extends Object, K extends ObjectDataType>(
     object : O,
     dataType : K,
-    compareFn : (a : ObjectData<O>[K], b: ObjectData<O>[K]) => number
+    handler : (a : ObjectData<O>[K], b: ObjectData<O>[K]) => number
 ) : O {
-    return <O>Object.fromEntries(Object.entries(object).sort((dataA, dataB) => compareFn(
+    return <O>Object.fromEntries(Object.entries(object).sort((dataA, dataB) => handler(
         dataType === 'keys' ? dataA[0] : dataType === 'values' ? dataA[1] : dataA,
         dataType === 'keys' ? dataB[0] : dataType === 'values' ? dataB[1] : dataB
     )));

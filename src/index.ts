@@ -14,8 +14,8 @@ export default function asArray<O extends Object>(object : O) {
     }
     
     const methods = <K extends ObjectDataType>(dataType : K) : AsArrayMethods<O, K> => ({
-        filter: predicate => filter(object, dataType, predicate),
-        sort: compareFn => sort(object, dataType, compareFn)
+        filter: handler => filter(object, dataType, handler),
+        sort: handler => sort(object, dataType, handler)
     });
 
     return {

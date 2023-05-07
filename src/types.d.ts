@@ -7,6 +7,6 @@ export type ObjectData<O extends Object> = {
 }
 
 export type AsArrayMethods<O extends Object, K extends ObjectDataType> = {
-    filter : (predicate : (data : ObjectData<O>[K]) => boolean) => O;
-    sort : (compareFn : (a : ObjectData<O>[K], b: ObjectData<O>[K]) => number) => O;
+    filter : (handler : (data : ObjectData<O>[K]) => boolean) => O;
+    sort : (handler : (a : ObjectData<O>[K], b: ObjectData<O>[K]) => number) => O;
 }
