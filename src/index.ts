@@ -3,7 +3,7 @@ import type { AsArrayMethods, ObjectData, ObjectDataType } from "./types";
 import filter from "./filter";
 import sort from "./sort";
 
-export function asArray<O extends Object>(object : O) {
+export default function asArray<O extends Object>(object : O) {
 
     const data = <K extends ObjectDataType>(dataType : K) : Array<ObjectData<O>[K]> => {
         switch(dataType) {
@@ -29,5 +29,3 @@ export function asArray<O extends Object>(object : O) {
     }
 
 }
-
-export default asArray;
