@@ -5,5 +5,8 @@
         "activityBar.background": "#15313F",
         "titleBar.activeBackground": "#1E4458",
         "titleBar.activeForeground": "#F6FAFC"
+    },
+    "material-icon-theme.folders.associations": {
+        "workflows": "github"
     }
 }
