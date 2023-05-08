@@ -1,6 +1,6 @@
 import filter, { FilterHandler } from "./filter";
 import sort, { SortHandler } from "./sort";
-import toArray, { dataType } from "./toArray";
+import toArray, { DataType } from "./toArray";
 import toString from "./toString";
 
 export type objectAsArrayMethods<O extends object> = {
@@ -8,7 +8,7 @@ export type objectAsArrayMethods<O extends object> = {
     sort     : (handler : SortHandler<O>) => O
     // forEach  : (handler : ) => void
     toString : () => string
-    toArray  : <T extends keyof dataType<O>>(dataType : T) => dataType<O>[T]
+    toArray  : <T extends keyof DataType<O>>(dataType : T) => DataType<O>[T]
     length   : number
     object   : O
 }
