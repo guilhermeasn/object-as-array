@@ -1,15 +1,10 @@
-import type { ObjectData, ObjectDataType } from "./types";
 
 /**
  * Ordena um objeto de a acordo com a funcao de comparacao
  */
-export default function sort<O extends Object, K extends ObjectDataType>(
+export default function sort<O extends Object>(
     object : O,
-    dataType : K,
-    handler : (a : ObjectData<O>[K], b: ObjectData<O>[K]) => number
+    handler : (valueA : O[keyof O], valueB : O[keyof O], keyA : keyof O, keyB : keyof O) => number
 ) : O {
-    return <O>Object.fromEntries(Object.entries(object).sort((dataA, dataB) => handler(
-        dataType === 'keys' ? dataA[0] : dataType === 'values' ? dataA[1] : dataA,
-        dataType === 'keys' ? dataB[0] : dataType === 'values' ? dataB[1] : dataB
-    )));
+    return <O>Object.fromEntries(Object.entries(object).sort(([ka, va], [kb, vb]) => handler(va, vb, ka as keyof O, kb as keyof O)));
 }

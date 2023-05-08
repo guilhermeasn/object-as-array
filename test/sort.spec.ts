@@ -5,7 +5,7 @@ describe('Sort Test', () => {
 
     test('Testing key sort: Roman numerals in alphabetical order', () => {
 
-        expect(JSON.stringify(sort(roman, 'keys', (a, b) => a > b ? 1 : -1))).toBe(JSON.stringify({
+        expect(JSON.stringify(sort(roman, (_va, _vb, ka, kb) => ka > kb ? 1 : -1))).toBe(JSON.stringify({
             C : 100,
             D : 500,
             I : 1,
@@ -19,7 +19,7 @@ describe('Sort Test', () => {
 
     test('Testing value sort: Roman numerals in descending order', () => {
 
-        expect(JSON.stringify(sort(roman, 'values', (a, b) => b - a))).toBe(JSON.stringify({
+        expect(JSON.stringify(sort(roman, (va, vb) => vb - va))).toBe(JSON.stringify({
             M : 1000,
             D : 500,
             C : 100,
@@ -33,7 +33,7 @@ describe('Sort Test', () => {
 
     test('Testing entries sort: Biggest difference between the numbers', () => {
 
-        expect(JSON.stringify(sort(square, 'entries', ([ka, va], [kb, vb]) => (parseInt(ka) - va) - (parseInt(kb) - vb) || vb - va))).toBe(JSON.stringify({
+        expect(JSON.stringify(sort(square, (va, vb, ka, kb) => (parseInt(ka) - va) - (parseInt(kb) - vb) || vb - va))).toBe(JSON.stringify({
             '16' : 256,
             '04' : 16,
             '02' : 4,
