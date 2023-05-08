@@ -1,3 +1,3 @@
-export default function toString(object : Object) : string {
+export default function toString(object : object) : string {
     return JSON.stringify(object);
 }
