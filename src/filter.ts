@@ -1,8 +1,5 @@
 export type FilterHandler<O extends object> = (value : O[keyof O], key : keyof O) => boolean;
 
-/**
- * Filtra um objeto de a acordo com a funcao de filtragem
- */
 export default function filter<O extends object>(
     object : O,
     handler : FilterHandler<O>
