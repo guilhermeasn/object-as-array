@@ -19,9 +19,12 @@ import toArray from "./toArray";
 
 export default function objectAsArray<O extends object>(object : O) : objectAsArrayMethods<O> {
 
+    let length: number = Object.keys(object).length;
+
     function push(assign : Partial<O>) : number {
         object = { ...object, ...assign };
-        return Object.keys(object).length;
+        length = Object.keys(object).length;
+        return length;
     }
 
     return {
@@ -42,8 +45,8 @@ export default function objectAsArray<O extends object>(object : O) : objectAsAr
         lastKeyOf:   value => lastKeyOf(object, value),
         valueOf:     key => valueOf(object, key),
         push,
-        length:      Object.keys(object).length,
-        object:      object
+        length,
+        object
     }
 
 }
