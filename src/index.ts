@@ -1,11 +1,15 @@
+import {
+    DataType,
+    InfoType
+} from "./types";
+
 import every, { EveryHandler } from "./every";
 import filter, { FilterHandler } from "./filter";
 import forEach, { ForEachHandler } from "./forEach";
 import map, { MapHandler } from "./map";
 import reduce, { ReduceHandler } from "./reduce";
 import some, { SomeHandler } from "./some";
-import sort, { SortHandler, SortType } from "./sort";
-import toArray, { DataType } from "./toArray";
+import sort, { SortHandler } from "./sort";
 
 import join from "./join";
 import keyOf from "./keyOf";
@@ -15,6 +19,7 @@ import reverse from "./reverse";
 import toString from "./toString";
 import valueOf from "./valueOf";
 import concat from "./concat";
+import toArray from "./toArray";
 
 export type objectAsArrayMethods<O extends object> = {
     filter      : (handler : FilterHandler<O>) => Partial<O>
@@ -22,7 +27,7 @@ export type objectAsArrayMethods<O extends object> = {
     every       : (handler : EveryHandler<O>) => boolean
     forEach     : (handler : ForEachHandler<O>) => void
     map         : <R>(handler : MapHandler<O, R>) => R[]
-    sort        : <T extends keyof SortType<O>>(dataType : T, handler : SortHandler<O, T>) => O
+    sort        : <T extends keyof InfoType<O>>(dataType : T, handler : SortHandler<O, T>) => O
     reduce      : <R = O[keyof O]>(handler : ReduceHandler<O, R>, initial ?: R) => R | undefined
     reduceRight : <R = O[keyof O]>(handler : ReduceHandler<O, R>, initial ?: R) => R | undefined
     concat      : <A extends object>(assign : A) => O & A

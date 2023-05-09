@@ -1,14 +1,10 @@
-export type SortType<O extends object> = {
-    keys    : keyof O,
-    values  : O[keyof O],
-    entries : [keyof O, O[keyof O]]
-}
+import { InfoType } from "./types";
 
-export type SortHandler<O extends object, T extends keyof SortType<O>> = (a : SortType<O>[T], b : SortType<O>[T]) => number;
+export type SortHandler<O extends object, T extends keyof InfoType<O>> = (a : InfoType<O>[T], b : InfoType<O>[T]) => number;
 
-export default function sort<O extends object, T extends keyof SortType<O>>(object : O, dataType : T, handler : SortHandler<O, T>) : O {
+export default function sort<O extends object, T extends keyof InfoType<O>>(object : O, infoType : T, handler : SortHandler<O, T>) : O {
     return <O>Object.fromEntries(Object.entries(object).sort(([ka, va], [kb, vb]) => handler(
-        dataType === 'keys' ? ka : dataType === 'values' ? va : [ka, va],
-        dataType === 'keys' ? kb : dataType === 'values' ? vb : [kb, vb]
+        infoType === 'key' ? ka : infoType === 'value' ? va : [ka, va],
+        infoType === 'key' ? kb : infoType === 'value' ? vb : [kb, vb]
     )));
 }
