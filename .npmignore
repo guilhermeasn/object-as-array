@@ -1,0 +1,9 @@
+node_modules/
+misc/
+packs/
+src/
+.vscode/
+.github/
+jest.config.js
+tsconfig.json
+tsconfig.m.json

@@ -1,9 +1,13 @@
 {
   "name": "object-as-array",
-  "version": "0.1.0",
-  "main": "dist/index.js",
+  "version": "0.1.0-beta",
+  "main": "dist/common/index.js",
+  "module": "dist/module/index.js",
+  "types": "dist/types/index.d.ts",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "rimraf dist && tsc --project tsconfig.json && tsc --project tsconfig.m.json",
+    "packpublish": "npm pack --pack-destination .\\packs\\ && npm publish"
   },
   "license": "MIT",
   "devDependencies": {

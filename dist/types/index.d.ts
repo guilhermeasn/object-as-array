@@ -1,0 +1,26 @@
+import { EveryHandler } from "./every";
+import { FilterHandler } from "./filter";
+import { ForEachHandler } from "./forEach";
+import { MapHandler } from "./map";
+import { ReduceHandler } from "./reduce";
+import { SomeHandler } from "./some";
+import { SortHandler } from "./sort";
+import { DataType } from "./toArray";
+export type objectAsArrayMethods<O extends object> = {
+    filter: (handler: FilterHandler<O>) => Partial<O>;
+    sort: (handler: SortHandler<O>) => O;
+    some: (handler: SomeHandler<O>) => boolean;
+    every: (handler: EveryHandler<O>) => boolean;
+    forEach: (handler: ForEachHandler<O>) => void;
+    map: <R>(handler: MapHandler<O, R>) => R[];
+    reduce: <R = O[keyof O]>(handler: ReduceHandler<O, R>, initial?: R) => R;
+    reverse: () => O;
+    toString: () => string;
+    toArray: <T extends keyof DataType<O>>(dataType: T) => DataType<O>[T];
+    join: <T extends keyof DataType<O>>(dataType: T, separator?: T extends 'entries' ? [string, string] | string : string) => string;
+    keyOf: (value: O[keyof O]) => keyof O | null;
+    lastKeyOf: (value: O[keyof O]) => keyof O | null;
+    length: number;
+    object: O;
+};
+export default function objectAsArray<O extends object>(object: O): objectAsArrayMethods<O>;
