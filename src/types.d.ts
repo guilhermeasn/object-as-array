@@ -1,5 +1,6 @@
 import type { EveryHandler } from "./every"
 import type { FilterHandler } from "./filter"
+import type { FindHandler } from "./find"
 import type { ForEachHandler } from "./forEach"
 import type { MapHandler } from "./map"
 import type { ReduceHandler } from "./reduce"
@@ -32,6 +33,8 @@ export type ObjectAsArray<O extends object> = {
     toString    : () => string
     toArray     : <T extends keyof ObjectData<O>>(dataType : T) => ObjectData<O>[T]
     join        : <T extends keyof ObjectData<O>>(dataType : T, separator ?: T extends 'entries' ? [string, string] | string : string) => string
+    find        : <T extends keyof ObjectInfo<O>>(dataType : T, handler : FindHandler<O>) => ObjectInfo<O>[T] | null
+    findLast    : <T extends keyof ObjectInfo<O>>(dataType : T, handler : FindHandler<O>) => ObjectInfo<O>[T] | null
     keyOf       : (value : O[keyof O]) => keyof O | null
     lastKeyOf   : (value : O[keyof O]) => keyof O | null
     valueOf     : <K extends keyof O>(key : K) => O[K]

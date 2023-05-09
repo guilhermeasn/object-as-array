@@ -3,6 +3,8 @@ import type { ObjectAsArray } from "./types";
 import concat from "./concat";
 import every from "./every";
 import filter from "./filter";
+import find from "./find";
+import findLast from "./findLast";
 import forEach from "./forEach";
 import join from "./join";
 import keyOf from "./keyOf";
@@ -41,6 +43,8 @@ export default function objectAsArray<O extends object>(object : O) : ObjectAsAr
         toString:    () => toString(object),
         toArray:     dataType => toArray(object, dataType),
         join:        (dataType, separator) => join(object, dataType, separator),
+        find:        (dataType, handler) => find(object, dataType, handler),
+        findLast:    (dataType, handler) => findLast(object, dataType, handler),
         keyOf:       value => keyOf(object, value),
         lastKeyOf:   value => lastKeyOf(object, value),
         valueOf:     key => valueOf(object, key),
