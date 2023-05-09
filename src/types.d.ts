@@ -36,6 +36,7 @@ export type ObjectAsArray<O extends object> = {
     every       : (handler : EveryHandler<O>) => boolean
     forEach     : (handler : ForEachHandler<O>) => void
     map         : <R>(handler : MapHandler<O, R>) => R[]
+    keysMap     : <R>(handler : MapHandler<O, R>) => Record<keyof O, R>
     sort        : <T extends keyof ObjectInfo<O>>(dataType : T, handler : SortHandler<O, T>) => O
     reduce      : <R = O[keyof O]>(handler : ReduceHandler<O, R>, initial ?: R) => R | undefined
     reduceRight : <R = O[keyof O]>(handler : ReduceHandler<O, R>, initial ?: R) => R | undefined

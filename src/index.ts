@@ -20,6 +20,7 @@ import splice from "./splice";
 import toArray from "./toArray";
 import toString from "./toString";
 import valueOf from "./valueOf";
+import keysMap from "./keysMap";
 
 export type * from './types';
 
@@ -39,6 +40,7 @@ export default function objectAsArray<O extends object>(object : O) : ObjectAsAr
         every:       handler => every(object, handler),
         forEach:     handler => forEach(object, handler),
         map:         handler => map(object, handler),
+        keysMap:     handler => keysMap(object, handler),
         sort:        (dataType, handler) => sort(object, dataType, handler),
         reduce:      (handler, initial) => reduce(object, handler, initial),
         reduceRight: (handler, initial) => reduceRight(object, handler, initial),
