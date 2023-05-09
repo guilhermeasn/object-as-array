@@ -15,3 +15,9 @@ export const square = {
     '04' : 16,
     '16' : 256
 }
+
+export const repeat = {
+    a : 'abc',
+    b : 'abc',
+    c : 'abc'
+}
