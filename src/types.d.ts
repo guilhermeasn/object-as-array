@@ -7,6 +7,17 @@ import type { ReduceHandler } from "./reduce"
 import type { SomeHandler } from "./some"
 import type { SortHandler } from "./sort"
 
+export type {
+    EveryHandler,
+    FilterHandler,
+    FindHandler,
+    ForEachHandler,
+    MapHandler,
+    ReduceHandler,
+    SomeHandler,
+    SortHandler
+}
+
 export type ObjectInfo<O extends object> = {
     key    : keyof O,
     value  : O[keyof O],

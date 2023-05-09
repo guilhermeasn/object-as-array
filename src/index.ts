@@ -19,6 +19,8 @@ import toArray from "./toArray";
 import toString from "./toString";
 import valueOf from "./valueOf";
 
+export type * from './types';
+
 export default function objectAsArray<O extends object>(object : O) : ObjectAsArray<O> {
 
     let length: number = Object.keys(object).length;
