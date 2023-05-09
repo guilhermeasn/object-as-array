@@ -33,11 +33,17 @@ export type objectAsArrayMethods<O extends object> = {
     keyOf       : (value : O[keyof O]) => keyof O | null
     lastKeyOf   : (value : O[keyof O]) => keyof O | null
     valueOf     : <K extends keyof O>(key : K) => O[K]
+    push        : (assign : Partial<O>) => number
     length      : number
     object      : O
 }
 
 export default function objectAsArray<O extends object>(object : O) : objectAsArrayMethods<O> {
+
+    function push(assign : Partial<O>) : number {
+        object = { ...object, ...assign };
+        return Object.keys(object).length;
+    }
 
     return {
         filter:      handler => filter(object, handler),
@@ -56,6 +62,7 @@ export default function objectAsArray<O extends object>(object : O) : objectAsAr
         keyOf:       value => keyOf(object, value),
         lastKeyOf:   value => lastKeyOf(object, value),
         valueOf:     key => valueOf(object, key),
+        push,
         length:      Object.keys(object).length,
         object:      object
     }
