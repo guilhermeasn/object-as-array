@@ -14,6 +14,7 @@ import reduceRight from "./reduceRight";
 import reverse from "./reverse";
 import toString from "./toString";
 import valueOf from "./valueOf";
+import concat from "./concat";
 
 export type objectAsArrayMethods<O extends object> = {
     filter      : (handler : FilterHandler<O>) => Partial<O>
@@ -24,13 +25,14 @@ export type objectAsArrayMethods<O extends object> = {
     sort        : <T extends keyof SortType<O>>(dataType : T, handler : SortHandler<O, T>) => O
     reduce      : <R = O[keyof O]>(handler : ReduceHandler<O, R>, initial ?: R) => R | undefined
     reduceRight : <R = O[keyof O]>(handler : ReduceHandler<O, R>, initial ?: R) => R | undefined
+    concat      : <A extends object>(assign : A) => O & A
     reverse     : () => O
     toString    : () => string
     toArray     : <T extends keyof DataType<O>>(dataType : T) => DataType<O>[T]
     join        : <T extends keyof DataType<O>>(dataType : T, separator ?: T extends 'entries' ? [string, string] | string : string) => string
     keyOf       : (value : O[keyof O]) => keyof O | null
     lastKeyOf   : (value : O[keyof O]) => keyof O | null
-    valueOf:     <K extends keyof O>(key : K) => O[K]
+    valueOf     : <K extends keyof O>(key : K) => O[K]
     length      : number
     object      : O
 }
@@ -46,6 +48,7 @@ export default function objectAsArray<O extends object>(object : O) : objectAsAr
         sort:        (dataType, handler) => sort(object, dataType, handler),
         reduce:      (handler, initial) => reduce(object, handler, initial),
         reduceRight: (handler, initial) => reduceRight(object, handler, initial),
+        concat:      assign => concat(object, assign),
         reverse:     () => reverse(object),
         toString:    () => toString(object),
         toArray:     dataType => toArray(object, dataType),
