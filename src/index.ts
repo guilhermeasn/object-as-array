@@ -2,6 +2,7 @@ import every, { EveryHandler } from "./every";
 import filter, { FilterHandler } from "./filter";
 import forEach, { ForEachHandler } from "./forEach";
 import map, { MapHandler } from "./map";
+import reduce, { ReduceHandler } from "./reduce";
 import some, { SomeHandler } from "./some";
 import sort, { SortHandler } from "./sort";
 import toArray, { DataType } from "./toArray";
@@ -19,6 +20,7 @@ export type objectAsArrayMethods<O extends object> = {
     every     : (handler : EveryHandler<O>) => boolean
     forEach   : (handler : ForEachHandler<O>) => void
     map       : <R>(handler : MapHandler<O, R>) => R[]
+    reduce    : <R = O[keyof O]>(handler : ReduceHandler<O, R>, initial ?: R) => R
     reverse   : () => O
     toString  : () => string
     toArray   : <T extends keyof DataType<O>>(dataType : T) => DataType<O>[T]
@@ -38,6 +40,7 @@ export default function objectAsArray<O extends object>(object : O) : objectAsAr
         every:     handler => every(object, handler),
         forEach:   handler => forEach(object, handler),
         map:       handler => map(object, handler),
+        reduce:    (handler, initial) => reduce(object, handler, initial),
         reverse:   () => reverse(object),
         toString:  () => toString(object),
         toArray:   dataType => toArray(object, dataType),
