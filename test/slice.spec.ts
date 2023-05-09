@@ -3,6 +3,10 @@ import { roman } from "./data";
 
 describe('Slice Func Test', () => {
 
+    test('Slice nothing', () => {
+        expect(slice(roman)).toStrictEqual({});
+    });
+
     test('Slice roman numbers', () => {
 
         expect(slice(roman, 'V', 'L', 'D')).toStrictEqual({

@@ -39,6 +39,8 @@ export type ObjectAsArray<O extends object> = {
     sort        : <T extends keyof ObjectInfo<O>>(dataType : T, handler : SortHandler<O, T>) => O
     reduce      : <R = O[keyof O]>(handler : ReduceHandler<O, R>, initial ?: R) => R | undefined
     reduceRight : <R = O[keyof O]>(handler : ReduceHandler<O, R>, initial ?: R) => R | undefined
+    slice       : <K extends Array<keyof O>>(...keys : K) => Pick<O, ArrayValuesType<K>>
+    splice      : <K extends Array<keyof O>>(changeOriginalObject : boolean, ...keys : K) => Omit<O, ArrayValuesType<K>>
     concat      : <A extends object>(assign : A) => O & A
     reverse     : () => O
     toString    : () => string

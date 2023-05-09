@@ -42,5 +42,8 @@ describe('Splice Func Test', () => {
 
     });
 
+    test('Splice all', () => {
+        expect(splice(roman, false)).toStrictEqual(roman);
+    })
 
 });

@@ -13,8 +13,10 @@ import map from "./map";
 import reduce from "./reduce";
 import reduceRight from "./reduceRight";
 import reverse from "./reverse";
+import slice from "./slice";
 import some from "./some";
 import sort from "./sort";
+import splice from "./splice";
 import toArray from "./toArray";
 import toString from "./toString";
 import valueOf from "./valueOf";
@@ -40,6 +42,8 @@ export default function objectAsArray<O extends object>(object : O) : ObjectAsAr
         sort:        (dataType, handler) => sort(object, dataType, handler),
         reduce:      (handler, initial) => reduce(object, handler, initial),
         reduceRight: (handler, initial) => reduceRight(object, handler, initial),
+        slice:       (...keys) => slice(object, ...keys),
+        splice:      (changeOriginalObject, ...keys) => splice(object, changeOriginalObject, ...keys),
         concat:      assign => concat(object, assign),
         reverse:     () => reverse(object),
         toString:    () => toString(object),
