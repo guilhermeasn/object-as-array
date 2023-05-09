@@ -54,9 +54,9 @@ export default function objectAsArray<O extends object>(object : O) : ObjectAsAr
         keyOf:       value => keyOf(object, value),
         lastKeyOf:   value => lastKeyOf(object, value),
         valueOf:     key => valueOf(object, key),
+        data:        () => object,
         push,
-        length,
-        object
+        length
     }
 
 }

@@ -51,9 +51,9 @@ export type ObjectAsArray<O extends object> = {
     keyOf       : (value : O[keyof O]) => keyof O | null
     lastKeyOf   : (value : O[keyof O]) => keyof O | null
     valueOf     : <K extends keyof O>(key : K) => O[K]
+    data        : () => O
     push        : (assign : Partial<O>) => number
     length      : number
-    object      : O
 }
 
 export type ArrayValuesType<T extends ReadonlyArray<unknown>> = (
