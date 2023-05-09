@@ -13,6 +13,7 @@ import lastKeyOf from "./lastKeyOf";
 import reduceRight from "./reduceRight";
 import reverse from "./reverse";
 import toString from "./toString";
+import valueOf from "./valueOf";
 
 export type objectAsArrayMethods<O extends object> = {
     filter      : (handler : FilterHandler<O>) => Partial<O>
@@ -29,6 +30,7 @@ export type objectAsArrayMethods<O extends object> = {
     join        : <T extends keyof DataType<O>>(dataType : T, separator ?: T extends 'entries' ? [string, string] | string : string) => string
     keyOf       : (value : O[keyof O]) => keyof O | null
     lastKeyOf   : (value : O[keyof O]) => keyof O | null
+    valueOf:     <K extends keyof O>(key : K) => O[K]
     length      : number
     object      : O
 }
@@ -50,6 +52,7 @@ export default function objectAsArray<O extends object>(object : O) : objectAsAr
         join:        (dataType, separator) => join(object, dataType, separator),
         keyOf:       value => keyOf(object, value),
         lastKeyOf:   value => lastKeyOf(object, value),
+        valueOf:     key => valueOf(object, key),
         length:      Object.keys(object).length,
         object:      object
     }
