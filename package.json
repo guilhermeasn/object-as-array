@@ -1,6 +1,7 @@
 {
   "name": "object-as-array",
   "version": "0.1.0-beta",
+  "description": "Manipulate a javascript object with some of the most used functions in arrays",
   "main": "dist/common/index.js",
   "module": "dist/module/index.js",
   "types": "dist/types/index.d.ts",
@@ -9,7 +10,23 @@
     "build": "rimraf dist && tsc --project tsconfig.json && tsc --project tsconfig.m.json",
     "packpublish": "npm pack --pack-destination .\\packs\\ && npm publish"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/guilhermeasn/object-as-array.git"
+  },
+  "keywords": [
+    "object",
+    "array",
+    "javascript",
+    "typescript",
+    "functional"
+  ],
+  "author": "Guilherme Augusto Neves <guilhermeasn@yahoo.com.br>",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/guilhermeasn/object-as-array/issues"
+  },
+  "homepage": "https://github.com/guilhermeasn/object-as-array#readme",
   "devDependencies": {
     "@types/jest": "^29.5.1",
     "jest": "^29.5.0",
