@@ -20,7 +20,7 @@ export type objectAsArrayMethods<O extends object> = {
     every     : (handler : EveryHandler<O>) => boolean
     forEach   : (handler : ForEachHandler<O>) => void
     map       : <R>(handler : MapHandler<O, R>) => R[]
-    reduce    : <R = O[keyof O]>(handler : ReduceHandler<O, R>, initial ?: R) => R
+    reduce    : <R = O[keyof O]>(handler : ReduceHandler<O, R>, initial ?: R) => R | undefined
     reverse   : () => O
     toString  : () => string
     toArray   : <T extends keyof DataType<O>>(dataType : T) => DataType<O>[T]
