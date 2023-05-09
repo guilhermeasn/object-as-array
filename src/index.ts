@@ -1,23 +1,23 @@
-import type { objectAsArrayMethods} from "./types";
+import type { ObjectAsArray } from "./types";
 
+import concat from "./concat";
 import every from "./every";
 import filter from "./filter";
 import forEach from "./forEach";
-import map from "./map";
-import reduce from "./reduce";
-import some from "./some";
-import sort from "./sort";
 import join from "./join";
 import keyOf from "./keyOf";
 import lastKeyOf from "./lastKeyOf";
+import map from "./map";
+import reduce from "./reduce";
 import reduceRight from "./reduceRight";
 import reverse from "./reverse";
+import some from "./some";
+import sort from "./sort";
+import toArray from "./toArray";
 import toString from "./toString";
 import valueOf from "./valueOf";
-import concat from "./concat";
-import toArray from "./toArray";
 
-export default function objectAsArray<O extends object>(object : O) : objectAsArrayMethods<O> {
+export default function objectAsArray<O extends object>(object : O) : ObjectAsArray<O> {
 
     let length: number = Object.keys(object).length;
 
