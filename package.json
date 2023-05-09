@@ -1,6 +1,6 @@
 {
   "name": "object-as-array",
-  "version": "0.1.1-beta",
+  "version": "0.2.0-beta",
   "description": "Manipulate a javascript object with some of the most used functions in arrays",
   "main": "dist/common/index.js",
   "module": "dist/module/index.js",

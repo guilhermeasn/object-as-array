@@ -8,6 +8,7 @@ import findLast from "./findLast";
 import forEach from "./forEach";
 import join from "./join";
 import keyOf from "./keyOf";
+import keysMap from "./keysMap";
 import lastKeyOf from "./lastKeyOf";
 import map from "./map";
 import reduce from "./reduce";
@@ -20,7 +21,6 @@ import splice from "./splice";
 import toArray from "./toArray";
 import toString from "./toString";
 import valueOf from "./valueOf";
-import keysMap from "./keysMap";
 
 export type * from './types';
 
@@ -46,16 +46,16 @@ export default function objectAsArray<O extends object>(object : O) : ObjectAsAr
         reduceRight: (handler, initial) => reduceRight(object, handler, initial),
         slice:       (...keys) => slice(object, ...keys),
         splice:      (changeOriginalObject, ...keys) => splice(object, changeOriginalObject, ...keys),
-        concat:      assign => concat(object, assign),
+        concat:      assign => concat(object, assign), //testar
         reverse:     () => reverse(object),
-        toString:    () => toString(object),
-        toArray:     dataType => toArray(object, dataType),
+        toString:    () => toString(object), //testar
+        toArray:     dataType => toArray(object, dataType), //testar
         join:        (dataType, separator) => join(object, dataType, separator),
         find:        (dataType, handler) => find(object, dataType, handler),
         findLast:    (dataType, handler) => findLast(object, dataType, handler),
         keyOf:       value => keyOf(object, value),
         lastKeyOf:   value => lastKeyOf(object, value),
-        valueOf:     key => valueOf(object, key),
+        valueOf:     key => valueOf(object, key), //testar
         data:        () => object,
         push,
         length
