@@ -4,7 +4,7 @@
 [![npm](https://img.shields.io/npm/v/object-as-array.svg)](https://www.npmjs.com/package/object-as-array/v/latest)
 [![downloads](https://img.shields.io/npm/dt/object-as-array)](https://www.npmjs.com/package/object-as-array/)
 
-[Readme in English](README.md)
+[Readme in Portuguese](README.PT-BR.md)
 
 Manipulate a javascript object with some of the most used functions in arrays. You can use the functions in this package with functional or modular programming.
 
