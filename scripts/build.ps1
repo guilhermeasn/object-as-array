@@ -1,4 +1,4 @@
-if(test-path ./dir) {
+if(test-path ./dist) {
     rm ./dist -r -force
 }
 
