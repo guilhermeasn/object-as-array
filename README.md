@@ -53,7 +53,9 @@ yarn add object-as-array
 
 Returns only the elements of the object that satisfy the test function
 
- - Example with functional programming:
+ - Functional programming:
+
+```filter<O extends object>(object : O, handler : (value : O[keyof O], key : keyof O) => boolean) : Partial<O>```
 
 ```
 import objectAsArray from "object-as-array";
