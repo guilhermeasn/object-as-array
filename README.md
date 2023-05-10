@@ -10,6 +10,7 @@ Manipulate a javascript object with some of the most used functions in arrays. Y
 
 - [Installation](#installation)
 - [Filter](#filter)
+  - [Functional programming:](#functional-programming)
 - [Some](#some)
 - [Every](#every)
 - [ForEach](#foreach)
@@ -53,9 +54,13 @@ yarn add object-as-array
 
 Returns only the elements of the object that satisfy the test function
 
- - Functional programming:
+### Functional programming:
+
+ - Type:
 
 ```filter<O extends object>(object : O, handler : (value : O[keyof O], key : keyof O) => boolean) : Partial<O>```
+
+ - Example:
 
 ```
 import objectAsArray from "object-as-array";
