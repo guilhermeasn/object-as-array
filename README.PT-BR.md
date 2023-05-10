@@ -9,7 +9,7 @@
 Manipule um objeto javascript com algumas das funções mais usadas em arrays. É possível utilizar as funções deste pacote com progamação funcional ou modular.
 
 - [Instalação](#instalação)
-- [Método Filter](#método-filter)
+- [Filter](#filter)
 - [Some](#some)
 - [Every](#every)
 - [ForEach](#foreach)
@@ -49,7 +49,7 @@ Ou com *yarn*:
 yarn add object-as-array
 ```
 
-## Método Filter
+## Filter
 
 Retorna apenas os elementos do objeto que satisfazem a função de teste
 
@@ -896,13 +896,49 @@ Retorna o primeiro elemento que satisfaz a função de teste ou retorna nulo
 Exemplo com programação funcional:
 
 ```
+import objectAsArray from "object-as-array";
 
+export default function example() {
+    
+    const obj = objectAsArray({
+        I : 1,
+        V : 5,
+        X : 10,
+        L : 50,
+        C : 100,
+        D : 500,
+        M : 1000
+    });
+
+    return obj.find('key', v => v > 10);
+
+    // Result: 'L'
+
+}
 ```
 
 Exemplo com programação modular:
 
 ```
+import find from "object-as-array/find";
 
+export default function example() {
+    
+    const obj = {
+        I : 1,
+        V : 5,
+        X : 10,
+        L : 50,
+        C : 100,
+        D : 500,
+        M : 1000
+    };
+
+    return find(obj, 'key', v => v > 10);
+
+    // Result: 'L'
+
+}
 ```
 
 ## FindLast
@@ -912,13 +948,49 @@ Retorna o último elemento que satisfaz a função de teste ou retorna nulo
 Exemplo com programação funcional:
 
 ```
+import objectAsArray from "object-as-array";
 
+export default function example() {
+    
+    const obj = objectAsArray({
+        I : 1,
+        V : 5,
+        X : 10,
+        L : 50,
+        C : 100,
+        D : 500,
+        M : 1000
+    });
+
+    return obj.findLast('entrie', v => v < 1000);
+
+    // Result: ['D', 500]
+
+}
 ```
 
 Exemplo com programação modular:
 
 ```
+import findLast from "object-as-array/findLast";
 
+export default function example() {
+    
+    const obj = {
+        I : 1,
+        V : 5,
+        X : 10,
+        L : 50,
+        C : 100,
+        D : 500,
+        M : 1000
+    };
+
+    return findLast(obj, 'entrie', v => v < 1000);
+
+    // Result: ['D', 500]
+
+}
 ```
 
 ## KeyOf
@@ -928,13 +1000,49 @@ Retorna a chave da primeira ocorrência de um valor em um objeto ou nulo
 Exemplo com programação funcional:
 
 ```
+import objectAsArray from "object-as-array";
 
+export default function example() {
+    
+    const obj = objectAsArray({
+        I : 1,
+        V : 5,
+        X : 10,
+        L : 50,
+        C : 100,
+        D : 500,
+        M : 1000
+    });
+
+    return obj.keyOf(100);
+
+    // Result: 'C'
+
+}
 ```
 
 Exemplo com programação modular:
 
 ```
+import keyOf from "object-as-array/keyOf";
 
+export default function example() {
+    
+    const obj = {
+        I : 1,
+        V : 5,
+        X : 10,
+        L : 50,
+        C : 100,
+        D : 500,
+        M : 1000
+    };
+
+    return keyOf(obj, 100);
+
+    // Result: 'C'
+
+}
 ```
 
 ## LastKeyOf
@@ -944,13 +1052,49 @@ Retorna a chave da última ocorrência de um valor em um objeto ou nulo
 Exemplo com programação funcional:
 
 ```
+import objectAsArray from "object-as-array";
 
+export default function example() {
+    
+    const obj = objectAsArray({
+        I : 1,
+        V : 5,
+        X : 10,
+        L : 50,
+        C : 100,
+        D : 500,
+        M : 1000
+    });
+
+    return obj.lastKeyOf(300);
+
+    // Result: null
+
+}
 ```
 
 Exemplo com programação modular:
 
 ```
+import lastKeyOf from "object-as-array/lastKeyOf";
 
+export default function example() {
+    
+    const obj = {
+        I : 1,
+        V : 5,
+        X : 10,
+        L : 50,
+        C : 100,
+        D : 500,
+        M : 1000
+    };
+
+    return lastKeyOf(obj, 300);
+
+    // Result: null
+
+}
 ```
 
 ## ValueOf
@@ -960,61 +1104,133 @@ Retorna o valor de um elemento em um objeto
 Exemplo com programação funcional:
 
 ```
+import objectAsArray from "object-as-array";
 
+export default function example() {
+    
+    const obj = objectAsArray({
+        I : 1,
+        V : 5,
+        X : 10,
+        L : 50,
+        C : 100,
+        D : 500,
+        M : 1000
+    });
+
+    return obj.valueOf('X');
+
+    // Result: 10
+
+}
 ```
 
 Exemplo com programação modular:
 
 ```
+import valueOf from "object-as-array/valueOf";
 
+export default function example() {
+    
+    const obj = {
+        I : 1,
+        V : 5,
+        X : 10,
+        L : 50,
+        C : 100,
+        D : 500,
+        M : 1000
+    };
+
+    return valueOf(obj, 'X');
+
+    // Result: 10
+
+}
 ```
 
 ## Data
 
 Retorna o objeto original
 
-Exemplo com programação funcional:
+Exemplo:
 
 ```
+import objectAsArray from "object-as-array";
 
-```
+export default function example() {
+    
+    const obj = objectAsArray({
+        I : 1,
+        V : 5,
+        X : 10,
+        L : 50,
+        C : 100,
+        D : 500,
+        M : 1000
+    });
 
-Exemplo com programação modular:
+    return obj.data();
 
-```
+    // Result: {I : 1, V : 5, X : 10, L : 50, C : 100, D : 500, M : 1000}
 
+}
 ```
 
 ## Push
 
 Adiciona dados ou modifica o objeto original
 
-Exemplo com programação funcional:
+Exemplo:
 
 ```
+import objectAsArray from "object-as-array";
 
-```
+export default function example() {
+    
+    const obj = objectAsArray({
+        I : 1,
+        V : 5,
+        X : 10,
+        L : 50,
+        C : 100,
+        D : 500,
+        M : 1000
+    });
 
-Exemplo com programação modular:
+    return obj.push({II: 2, III: 3, IV: 4});
 
-```
+    // Result: 10 (object changed)
 
+}
 ```
 
 ## Length
 
 Número de elementos no objeto original
 
-Exemplo com programação funcional:
+Exemplo:
 
 ```
+import objectAsArray from "object-as-array";
 
-```
+export default function example() {
+    
+    const obj = objectAsArray({
+        I : 1,
+        V : 5,
+        X : 10,
+        L : 50,
+        C : 100,
+        D : 500,
+        M : 1000
+    });
 
-Exemplo com programação modular:
+    return obj.length;
 
-```
+    // Result: 7
 
+}
 ```
 
 ## Informações
