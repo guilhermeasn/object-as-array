@@ -33,7 +33,7 @@ Manipulate a javascript object with some of the most used functions in arrays. Y
 - [Data](#data)
 - [Push](#push)
 - [Length](#length)
-- [Informações](#informações)
+- [About](#about)
 
 ## Installation
 
@@ -1242,12 +1242,12 @@ export default function example() {
 }
 ```
 
-## Informações
+## About
 
-**Autor**
+**Author**
 
 * **Guilherme Neves** - [github](https://github.com/guilhermeasn/) - [website](https://gn.dev.br/)
 
 **License**
 
-Este projeto está sob a licença MIT - veja o arquivo [LICENSE](https://github.com/guilhermeasn/mask-hooks/blob/master/LICENSE) para detalhes.
+This project is under the MIT license - see the [LICENSE](https://github.com/guilhermeasn/mask-hooks/blob/master/LICENSE) file for details.

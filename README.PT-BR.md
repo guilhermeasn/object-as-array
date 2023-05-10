@@ -105,7 +105,7 @@ export default function example() {
 
 Determina se um dos membros de um objeto satisfaz o teste especificado
 
-Exemplo com programação funcional:
+ - Exemplo com programação funcional:
 
 ```
 import objectAsArray from "object-as-array";
@@ -129,7 +129,7 @@ export default function example() {
 }
 ```
 
-Exemplo com programação modular:
+ - Exemplo com programação modular:
 
 ```
 import some from "object-as-array/some";
@@ -157,7 +157,7 @@ export default function example() {
 
 Determina se todos os membros de um objeto satisfazem o teste especificado
 
-Exemplo com programação funcional:
+ - Exemplo com programação funcional:
 
 ```
 import objectAsArray from "object-as-array";
@@ -181,7 +181,7 @@ export default function example() {
 }
 ```
 
-Exemplo com programação modular:
+ - Exemplo com programação modular:
 
 ```
 import every from "object-as-array/every";
@@ -209,7 +209,7 @@ export default function example() {
 
 Executa a ação especificada para cada elemento de um objeto
 
-Exemplo com programação funcional:
+ - Exemplo com programação funcional:
 
 ```
 import objectAsArray from "object-as-array";
@@ -237,7 +237,7 @@ export default function example() {
 }
 ```
 
-Exemplo com programação modular:
+ - Exemplo com programação modular:
 
 ```
 import forEach from "object-as-array/forEach";
@@ -269,7 +269,7 @@ export default function example() {
 
 Utiliza um callback em cada elemento de um objeto, e retorna um array com os resultados
 
-Exemplo com programação funcional:
+ - Exemplo com programação funcional:
 
 ```
 import objectAsArray from "object-as-array";
@@ -293,7 +293,7 @@ export default function example() {
 }
 ```
 
-Exemplo com programação modular:
+ - Exemplo com programação modular:
 
 ```
 import map from "object-as-array/map";
@@ -321,7 +321,7 @@ export default function example() {
 
 Utiliza um callback em cada elemento de um objeto, e retorna um objeto com as mesmas chaves porém com novos valores
 
-Exemplo com programação funcional:
+ - Exemplo com programação funcional:
 
 ```
 import objectAsArray from "object-as-array";
@@ -345,7 +345,7 @@ export default function example() {
 }
 ```
 
-Exemplo com programação modular:
+ - Exemplo com programação modular:
 
 ```
 import keysMap from "object-as-array/keysMap";
@@ -373,7 +373,7 @@ export default function example() {
 
 Classifica a posição dos elementos do objeto
 
-Exemplo com programação funcional:
+ - Exemplo com programação funcional:
 
 ```
 import objectAsArray from "object-as-array";
@@ -397,7 +397,7 @@ export default function example() {
 }
 ```
 
-Exemplo com programação modular:
+ - Exemplo com programação modular:
 
 ```
 import sort from "object-as-array/sort";
@@ -425,7 +425,7 @@ export default function example() {
 
 Utilize um callback para todos os elementos em um objeto. O resultado é o acumulado do processamento de todo o objeto
 
-Exemplo com programação funcional:
+ - Exemplo com programação funcional:
 
 ```
 import objectAsArray from "object-as-array";
@@ -449,7 +449,7 @@ export default function example() {
 }
 ```
 
-Exemplo com programação modular:
+ - Exemplo com programação modular:
 
 ```
 import reduce from "object-as-array/reduce";
@@ -477,7 +477,7 @@ export default function example() {
 
 Utilize um callback para todos os elementos em um objeto de forma invertida. O resultado é o acumulado do processamento de todo o objeto
 
-Exemplo com programação funcional:
+ - Exemplo com programação funcional:
 
 ```
 import objectAsArray from "object-as-array";
@@ -501,7 +501,7 @@ export default function example() {
 }
 ```
 
-Exemplo com programação modular:
+ - Exemplo com programação modular:
 
 ```
 import reduceRight from "object-as-array/reduceRight";
@@ -529,7 +529,7 @@ export default function example() {
 
 Retorna uma parte de um objeto
 
-Exemplo com programação funcional:
+ - Exemplo com programação funcional:
 
 ```
 import objectAsArray from "object-as-array";
@@ -553,7 +553,7 @@ export default function example() {
 }
 ```
 
-Exemplo com programação modular:
+ - Exemplo com programação modular:
 
 ```
 import slice from "object-as-array/slice";
@@ -581,7 +581,7 @@ export default function example() {
 
 Retorna os elementos que não foram especificados, além de ser capaz de excluir esses elementos do objeto original
 
-Exemplo com programação funcional:
+ - Exemplo com programação funcional:
 
 ```
 import objectAsArray from "object-as-array";
@@ -605,7 +605,7 @@ export default function example() {
 }
 ```
 
-Exemplo com programação modular:
+ - Exemplo com programação modular:
 
 ```
 import splice from "object-as-array/splice";
@@ -633,7 +633,7 @@ export default function example() {
 
 Combina dois objetos. Este método retorna um novo objeto sem modificar nenhum dos dois objetos informados
 
-Exemplo com programação funcional:
+ - Exemplo com programação funcional:
 
 ```
 import objectAsArray from "object-as-array";
@@ -657,7 +657,7 @@ export default function example() {
 }
 ```
 
-Exemplo com programação modular:
+ - Exemplo com programação modular:
 
 ```
 import concat from "object-as-array/concat";
@@ -685,7 +685,7 @@ export default function example() {
 
 Reverte a posição dos elementos do objeto
 
-Exemplo com programação funcional:
+ - Exemplo com programação funcional:
 
 ```
 import objectAsArray from "object-as-array";
@@ -709,7 +709,7 @@ export default function example() {
 }
 ```
 
-Exemplo com programação modular:
+ - Exemplo com programação modular:
 
 ```
 import reverse from "object-as-array/reverse";
@@ -737,7 +737,7 @@ export default function example() {
 
 Transforme o objeto em uma string
 
-Exemplo com programação funcional:
+ - Exemplo com programação funcional:
 
 ```
 import objectAsArray from "object-as-array";
@@ -761,7 +761,7 @@ export default function example() {
 }
 ```
 
-Exemplo com programação modular:
+ - Exemplo com programação modular:
 
 ```
 import toString from "object-as-array/toString";
@@ -789,7 +789,7 @@ export default function example() {
 
 Transforme o objeto em um array
 
-Exemplo com programação funcional:
+ - Exemplo com programação funcional:
 
 ```
 import objectAsArray from "object-as-array";
@@ -813,7 +813,7 @@ export default function example() {
 }
 ```
 
-Exemplo com programação modular:
+ - Exemplo com programação modular:
 
 ```
 import toArray from "object-as-array/toArray";
@@ -841,7 +841,7 @@ export default function example() {
 
 Junta todos os elementos de um objeto, separando-os por uma string especifíca
 
-Exemplo com programação funcional:
+ - Exemplo com programação funcional:
 
 ```
 import objectAsArray from "object-as-array";
@@ -865,7 +865,7 @@ export default function example() {
 }
 ```
 
-Exemplo com programação modular:
+ - Exemplo com programação modular:
 
 ```
 import join from "object-as-array/join";
@@ -893,7 +893,7 @@ export default function example() {
 
 Retorna o primeiro elemento que satisfaz a função de teste ou retorna nulo
 
-Exemplo com programação funcional:
+ - Exemplo com programação funcional:
 
 ```
 import objectAsArray from "object-as-array";
@@ -917,7 +917,7 @@ export default function example() {
 }
 ```
 
-Exemplo com programação modular:
+ - Exemplo com programação modular:
 
 ```
 import find from "object-as-array/find";
@@ -945,7 +945,7 @@ export default function example() {
 
 Retorna o último elemento que satisfaz a função de teste ou retorna nulo
 
-Exemplo com programação funcional:
+ - Exemplo com programação funcional:
 
 ```
 import objectAsArray from "object-as-array";
@@ -969,7 +969,7 @@ export default function example() {
 }
 ```
 
-Exemplo com programação modular:
+ - Exemplo com programação modular:
 
 ```
 import findLast from "object-as-array/findLast";
@@ -997,7 +997,7 @@ export default function example() {
 
 Retorna a chave da primeira ocorrência de um valor em um objeto ou nulo
 
-Exemplo com programação funcional:
+ - Exemplo com programação funcional:
 
 ```
 import objectAsArray from "object-as-array";
@@ -1021,7 +1021,7 @@ export default function example() {
 }
 ```
 
-Exemplo com programação modular:
+ - Exemplo com programação modular:
 
 ```
 import keyOf from "object-as-array/keyOf";
@@ -1049,7 +1049,7 @@ export default function example() {
 
 Retorna a chave da última ocorrência de um valor em um objeto ou nulo
 
-Exemplo com programação funcional:
+ - Exemplo com programação funcional:
 
 ```
 import objectAsArray from "object-as-array";
@@ -1073,7 +1073,7 @@ export default function example() {
 }
 ```
 
-Exemplo com programação modular:
+ - Exemplo com programação modular:
 
 ```
 import lastKeyOf from "object-as-array/lastKeyOf";
@@ -1101,7 +1101,7 @@ export default function example() {
 
 Retorna o valor de um elemento de um objeto
 
-Exemplo com programação funcional:
+ - Exemplo com programação funcional:
 
 ```
 import objectAsArray from "object-as-array";
@@ -1125,7 +1125,7 @@ export default function example() {
 }
 ```
 
-Exemplo com programação modular:
+ - Exemplo com programação modular:
 
 ```
 import valueOf from "object-as-array/valueOf";
@@ -1239,6 +1239,6 @@ export default function example() {
 
 * **Guilherme Neves** - [github](https://github.com/guilhermeasn/) - [website](https://gn.dev.br/)
 
-**License**
+**Licença**
 
 Este projeto está sob a licença MIT - veja o arquivo [LICENSE](https://github.com/guilhermeasn/mask-hooks/blob/master/LICENSE) para detalhes.
