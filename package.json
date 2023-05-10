@@ -7,8 +7,7 @@
   "scripts": {
     "test": "jest",
     "build:ps": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./scripts/build.ps1",
-    "publish:ps": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./scripts/publish.ps1",
-    "packpublish": "cd ./dist && npm pack --pack-destination ..\\packs\\ && npm publish"
+    "publish:ps": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./scripts/publish.ps1"
   },
   "repository": {
     "type": "git",
