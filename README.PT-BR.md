@@ -4,40 +4,37 @@
 [![npm](https://img.shields.io/npm/v/object-as-array.svg)](https://www.npmjs.com/package/object-as-array/v/latest)
 [![downloads](https://img.shields.io/npm/dt/object-as-array)](https://www.npmjs.com/package/object-as-array/)
 
-[Introdução](#introdução)
-
-1. [filter](#filter)
-2. [some](#some)
-3. [every](#every)
-4. [forEach](#forEach)
-5. [map](#map)
-6. [keysMap](#keysMap)
-7. [sort](#sort)
-8.  [reduce](#reduce)
-9.  [reduceRight](#reduceRight)
-10. [slice](#slice)
-11. [splice](#splice)
-12. [concat](#concat)
-13. [reverse](#reverse)
-14. [toString](#toString)
-15. [toArray](#toArray)
-16. [join](#join)
-17. [find](#find)
-18. [findLast](#findLast)
-19. [keyOf](#keyOf)
-20. [lastKeyOf](#lastKeyOf)
-21. [valueOf](#valueOf)
-22. [data](#data)
-23. [push](#push)
-24. [length](#length)
-
-[Informações](#informações)
-
-## Introdução
-
 descricao...
 
-### Instalação
+- [object-as-array](#object-as-array)
+  - [Instalação](#instalação)
+  - [Filter](#filter)
+  - [Some](#some)
+  - [Every](#every)
+  - [ForEach](#foreach)
+  - [Map](#map)
+  - [KeysMap](#keysmap)
+  - [Sort](#sort)
+  - [Reduce](#reduce)
+  - [ReduceRight](#reduceright)
+  - [Slice](#slice)
+  - [Splice](#splice)
+  - [Concat](#concat)
+  - [Reverse](#reverse)
+  - [ToString](#tostring)
+  - [ToArray](#toarray)
+  - [Join](#join)
+  - [Find](#find)
+  - [FindLast](#findlast)
+  - [KeyOf](#keyof)
+  - [LastKeyOf](#lastkeyof)
+  - [ValueOf](#valueof)
+  - [Data](#data)
+  - [Push](#push)
+  - [Length](#length)
+  - [Informações](#informações)
+
+## Instalação
 
 Adicione o pacote **object-as-array** no seu projeto com *npm*:
 
@@ -51,10 +48,103 @@ Ou com *yarn*:
 yarn add object-as-array
 ```
 
-### Formas de utilização
-
-metodo modular e metodo funcional ...
-
 ## Filter
 
-sadds ...
+...
+
+## Some
+
+...
+
+## Every
+
+...
+
+## ForEach
+
+...
+
+## Map
+
+...
+
+## KeysMap
+
+...
+
+## Sort
+
+...
+
+## Reduce
+
+...
+
+## ReduceRight
+
+...
+
+## Slice
+
+...
+
+## Splice
+
+...
+
+## Concat
+
+...
+
+## Reverse
+
+...
+
+## ToString
+
+...
+
+## ToArray
+
+...
+
+## Join
+
+...
+
+## Find
+
+...
+
+## FindLast
+
+...
+
+## KeyOf
+
+...
+
+## LastKeyOf
+
+...
+
+## ValueOf
+
+...
+
+## Data
+
+...
+
+## Push
+
+...
+
+## Length
+
+...
+
+## Informações
+
+...
+
