@@ -1,14 +1,14 @@
 {
   "name": "object-as-array",
-  "version": "0.3.0-beta",
+  "version": "0.3.1-beta",
   "description": "Manipulate a javascript object with some of the most used functions in arrays",
-  "main": "dist/common/index.js",
-  "module": "dist/module/index.js",
-  "types": "dist/types/index.d.ts",
+  "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "jest",
-    "build:ps": "./scripts/build.ps1",
-    "packpublish": "npm pack --pack-destination .\\packs\\ && npm publish"
+    "build:ps": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./scripts/build.ps1",
+    "publish:ps": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./scripts/publish.ps1",
+    "packpublish": "cd ./dist && npm pack --pack-destination ..\\packs\\ && npm publish"
   },
   "repository": {
     "type": "git",
