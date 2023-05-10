@@ -6,7 +6,7 @@
 
 [Readme in English](README.md)
 
-Manipule um objeto javascript com algumas das funções mais usadas em arrays. É possível utilizar as funções deste pacote com progamação funcional ou modular.
+Manipule um objeto javascript com algumas das funções mais usadas em arrays. É possível utilizar as funções deste pacote com programação funcional ou modular.
 
 - [Instalação](#instalação)
 - [Filter](#filter)
