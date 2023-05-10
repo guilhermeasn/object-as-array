@@ -46,16 +46,16 @@ export default function objectAsArray<O extends object>(object : O) : ObjectAsAr
         reduceRight: (handler, initial) => reduceRight(object, handler, initial),
         slice:       (...keys) => slice(object, ...keys),
         splice:      (changeOriginalObject, ...keys) => splice(object, changeOriginalObject, ...keys),
-        concat:      assign => concat(object, assign), //testar
+        concat:      assign => concat(object, assign),
         reverse:     () => reverse(object),
-        toString:    () => toString(object), //testar
-        toArray:     dataType => toArray(object, dataType), //testar
+        toString:    expand => toString(object, expand),
+        toArray:     dataType => toArray(object, dataType),
         join:        (dataType, separator) => join(object, dataType, separator),
         find:        (dataType, handler) => find(object, dataType, handler),
         findLast:    (dataType, handler) => findLast(object, dataType, handler),
         keyOf:       value => keyOf(object, value),
         lastKeyOf:   value => lastKeyOf(object, value),
-        valueOf:     key => valueOf(object, key), //testar
+        valueOf:     key => valueOf(object, key),
         data:        () => object,
         push,
         length
