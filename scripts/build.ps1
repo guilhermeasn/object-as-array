@@ -4,5 +4,6 @@ if(test-path ./dist) {
 
 tsc --project tsconfig.json
 
-copy package.json dist/package.json
-copy README.md dist/README.md
+copy ./package.json ./dist/package.json
+copy ./README.md ./dist/README.md
+copy ./LICENSE ./dist/LICENSE
