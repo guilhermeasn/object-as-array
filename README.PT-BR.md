@@ -1099,7 +1099,7 @@ export default function example() {
 
 ## ValueOf
 
-Retorna o valor de um elemento em um objeto
+Retorna o valor de um elemento de um objeto
 
 Exemplo com programação funcional:
 
@@ -1235,4 +1235,10 @@ export default function example() {
 
 ## Informações
 
-...
+**Autor**
+
+* **Guilherme Neves** - [github](https://github.com/guilhermeasn/) - [website](https://gn.dev.br/)
+
+**License**
+
+Este projeto está sob a licença MIT - veja o arquivo [LICENSE](https://github.com/guilhermeasn/mask-hooks/blob/master/LICENSE) para detalhes.
