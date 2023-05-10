@@ -9,6 +9,7 @@
 Manipulate a javascript object with some of the most used functions in arrays. You can use the functions in this package with functional or modular programming.
 
 - [Installation](#installation)
+- [Typing](#typing)
 - [Filter](#filter)
 - [Some](#some)
 - [Every](#every)
@@ -49,11 +50,37 @@ Or with *yarn*:
 yarn add object-as-array
 ```
 
+## Typing
+
+Methods available for object-as-array functional programming
+
+```
+type ObjectAsArray<O extends object> = {
+
+    filter: (handler: (value: O[keyof O], key: keyof O) => boolean) => Partial<O>;
+
+    some: (handler: (value: O[keyof O], key: keyof O) => boolean) => boolean;
+
+    every: (handler: (value: O[keyof O], key: keyof O) => boolean) => boolean;
+
+    forEach: (handler: (value: O[keyof O], key: keyof O) => void) => void;
+
+    map: <R>(handler: (value: O[keyof O], key: keyof O) => R) => R[];
+
+    keysMap: <R>(handler: (value: O[keyof O], key: keyof O) => R) => Record<keyof O, R>;
+
+    sort: <T extends keyof ObjectInfo<O>>(dataType: T, handler: (a: ObjectInfo<O>[T], b: ObjectInfo<O>[T]) => number) => O;
+
+    
+
+}
+```
+
 ## Filter
 
 Returns only the elements of the object that satisfy the test function
 
-<h3>Functional programming</h3>
+<h3>Functional programming example</h3>
 
 ```
 import objectAsArray from "object-as-array";
@@ -77,7 +104,7 @@ export default function example() {
 }
 ```
 
-<h3>Modular programming</h3>
+<h3>Modular programming example</h3>
 
 ```
 import filter from "object-as-array/filter";
@@ -105,7 +132,7 @@ export default function example() {
 
 Determines whether one of an object's members satisfies the specified test
 
-<h3>Functional programming</h3>
+<h3>Functional programming example</h3>
 
 ```
 import objectAsArray from "object-as-array";
@@ -129,7 +156,7 @@ export default function example() {
 }
 ```
 
-<h3>Modular programming</h3>
+<h3>Modular programming example</h3>
 
 ```
 import some from "object-as-array/some";
@@ -157,7 +184,7 @@ export default function example() {
 
 Determines whether all the members of an object satisfy the specified test
 
-<h3>Functional programming</h3>
+<h3>Functional programming example</h3>
 
 ```
 import objectAsArray from "object-as-array";
@@ -181,7 +208,7 @@ export default function example() {
 }
 ```
 
-<h3>Modular programming</h3>
+<h3>Modular programming example</h3>
 
 ```
 import every from "object-as-array/every";
@@ -209,7 +236,7 @@ export default function example() {
 
 Performs the specified action for each element in an object
 
-<h3>Functional programming</h3>
+<h3>Functional programming example</h3>
 
 ```
 import objectAsArray from "object-as-array";
@@ -237,7 +264,7 @@ export default function example() {
 }
 ```
 
-<h3>Modular programming</h3>
+<h3>Modular programming example</h3>
 
 ```
 import forEach from "object-as-array/forEach";
@@ -269,7 +296,7 @@ export default function example() {
 
 Calls a defined callback function on each element of an object, and returns an array that contains the results.
 
-<h3>Functional programming</h3>
+<h3>Functional programming example</h3>
 
 ```
 import objectAsArray from "object-as-array";
@@ -293,7 +320,7 @@ export default function example() {
 }
 ```
 
-<h3>Modular programming</h3>
+<h3>Modular programming example</h3>
 
 ```
 import map from "object-as-array/map";
@@ -321,7 +348,7 @@ export default function example() {
 
 Calls a defined callback function on each element of an object, and returns an object with the same keys that contains the results.
 
-<h3>Functional programming</h3>
+<h3>Functional programming example</h3>
 
 ```
 import objectAsArray from "object-as-array";
@@ -345,7 +372,7 @@ export default function example() {
 }
 ```
 
-<h3>Modular programming</h3>
+<h3>Modular programming example</h3>
 
 ```
 import keysMap from "object-as-array/keysMap";
@@ -373,7 +400,7 @@ export default function example() {
 
 Sorts the position of the object's elements
 
-<h3>Functional programming</h3>
+<h3>Functional programming example</h3>
 
 ```
 import objectAsArray from "object-as-array";
@@ -397,7 +424,7 @@ export default function example() {
 }
 ```
 
-<h3>Modular programming</h3>
+<h3>Modular programming example</h3>
 
 ```
 import sort from "object-as-array/sort";
@@ -425,7 +452,7 @@ export default function example() {
 
 Calls the specified callback function for all the elements in an object. The return value of the callback function is the accumulated result, and is provided as an argument in the next call to the callback function
 
-<h3>Functional programming</h3>
+<h3>Functional programming example</h3>
 
 ```
 import objectAsArray from "object-as-array";
@@ -449,7 +476,7 @@ export default function example() {
 }
 ```
 
-<h3>Modular programming</h3>
+<h3>Modular programming example</h3>
 
 ```
 import reduce from "object-as-array/reduce";
@@ -477,7 +504,7 @@ export default function example() {
 
 Calls the specified callback function for all the elements in an object reversed. The return value of the callback function is the accumulated result, and is provided as an argument in the next call to the callback function
 
-<h3>Functional programming</h3>
+<h3>Functional programming example</h3>
 
 ```
 import objectAsArray from "object-as-array";
@@ -501,7 +528,7 @@ export default function example() {
 }
 ```
 
-<h3>Modular programming</h3>
+<h3>Modular programming example</h3>
 
 ```
 import reduceRight from "object-as-array/reduceRight";
@@ -529,7 +556,7 @@ export default function example() {
 
 Returns a section of an object
 
-<h3>Functional programming</h3>
+<h3>Functional programming example</h3>
 
 ```
 import objectAsArray from "object-as-array";
@@ -553,7 +580,7 @@ export default function example() {
 }
 ```
 
-<h3>Modular programming</h3>
+<h3>Modular programming example</h3>
 
 ```
 import slice from "object-as-array/slice";
@@ -582,7 +609,7 @@ export default function example() {
 Returns the elements that did not have their keys specified, being able to delete these elements from the original object or not
     
 
-<h3>Functional programming</h3>
+<h3>Functional programming example</h3>
 
 ```
 import objectAsArray from "object-as-array";
@@ -606,7 +633,7 @@ export default function example() {
 }
 ```
 
-<h3>Modular programming</h3>
+<h3>Modular programming example</h3>
 
 ```
 import splice from "object-as-array/splice";
@@ -634,7 +661,7 @@ export default function example() {
 
 Combines two objects. This method returns a new object without modifying any existing object
    
-<h3>Functional programming</h3>
+<h3>Functional programming example</h3>
 
 ```
 import objectAsArray from "object-as-array";
@@ -658,7 +685,7 @@ export default function example() {
 }
 ```
 
-<h3>Modular programming</h3>
+<h3>Modular programming example</h3>
 
 ```
 import concat from "object-as-array/concat";
@@ -686,7 +713,7 @@ export default function example() {
 
 Reverses the position of object elements
 
-<h3>Functional programming</h3>
+<h3>Functional programming example</h3>
 
 ```
 import objectAsArray from "object-as-array";
@@ -710,7 +737,7 @@ export default function example() {
 }
 ```
 
-<h3>Modular programming</h3>
+<h3>Modular programming example</h3>
 
 ```
 import reverse from "object-as-array/reverse";
@@ -738,7 +765,7 @@ export default function example() {
 
 Turn object into a string
 
-<h3>Functional programming</h3>
+<h3>Functional programming example</h3>
 
 ```
 import objectAsArray from "object-as-array";
@@ -762,7 +789,7 @@ export default function example() {
 }
 ```
 
-<h3>Modular programming</h3>
+<h3>Modular programming example</h3>
 
 ```
 import toString from "object-as-array/toString";
@@ -790,7 +817,7 @@ export default function example() {
 
 Turn object into an array
 
-<h3>Functional programming</h3>
+<h3>Functional programming example</h3>
 
 ```
 import objectAsArray from "object-as-array";
@@ -814,7 +841,7 @@ export default function example() {
 }
 ```
 
-<h3>Modular programming</h3>
+<h3>Modular programming example</h3>
 
 ```
 import toArray from "object-as-array/toArray";
@@ -843,7 +870,7 @@ export default function example() {
 Joins all elements of an object separated by the specified separator string
      
 
-<h3>Functional programming</h3>
+<h3>Functional programming example</h3>
 
 ```
 import objectAsArray from "object-as-array";
@@ -867,7 +894,7 @@ export default function example() {
 }
 ```
 
-<h3>Modular programming</h3>
+<h3>Modular programming example</h3>
 
 ```
 import join from "object-as-array/join";
@@ -896,7 +923,7 @@ export default function example() {
 Returns the first element that satisfies the test function or returns null
     
 
-<h3>Functional programming</h3>
+<h3>Functional programming example</h3>
 
 ```
 import objectAsArray from "object-as-array";
@@ -920,7 +947,7 @@ export default function example() {
 }
 ```
 
-<h3>Modular programming</h3>
+<h3>Modular programming example</h3>
 
 ```
 import find from "object-as-array/find";
@@ -949,7 +976,7 @@ export default function example() {
 Returns the last element that satisfies the test function or returns null
     
 
-<h3>Functional programming</h3>
+<h3>Functional programming example</h3>
 
 ```
 import objectAsArray from "object-as-array";
@@ -973,7 +1000,7 @@ export default function example() {
 }
 ```
 
-<h3>Modular programming</h3>
+<h3>Modular programming example</h3>
 
 ```
 import findLast from "object-as-array/findLast";
@@ -1002,7 +1029,7 @@ export default function example() {
 Returns the key of the first occurrence of a value in an object or null
      
 
-<h3>Functional programming</h3>
+<h3>Functional programming example</h3>
 
 ```
 import objectAsArray from "object-as-array";
@@ -1026,7 +1053,7 @@ export default function example() {
 }
 ```
 
-<h3>Modular programming</h3>
+<h3>Modular programming example</h3>
 
 ```
 import keyOf from "object-as-array/keyOf";
@@ -1055,7 +1082,7 @@ export default function example() {
 Returns the key of the last occurrence of a value in an object or null
      
 
-<h3>Functional programming</h3>
+<h3>Functional programming example</h3>
 
 ```
 import objectAsArray from "object-as-array";
@@ -1079,7 +1106,7 @@ export default function example() {
 }
 ```
 
-<h3>Modular programming</h3>
+<h3>Modular programming example</h3>
 
 ```
 import lastKeyOf from "object-as-array/lastKeyOf";
@@ -1107,8 +1134,7 @@ export default function example() {
 
 Returns the value of an element of an object
      
-
-<h3>Functional programming</h3>
+<h3>Functional programming example</h3>
 
 ```
 import objectAsArray from "object-as-array";
@@ -1132,7 +1158,7 @@ export default function example() {
 }
 ```
 
-<h3>Modular programming</h3>
+<h3>Modular programming example</h3>
 
 ```
 import valueOf from "object-as-array/valueOf";
@@ -1160,8 +1186,7 @@ export default function example() {
 
 Original object elements
      
-
-Example:
+<h3>Functional programming example</h3>
 
 ```
 import objectAsArray from "object-as-array";
@@ -1189,8 +1214,7 @@ export default function example() {
 
 Adds or modifies the original object
     
-
-Example:
+<h3>Functional programming example</h3>
 
 ```
 import objectAsArray from "object-as-array";
@@ -1218,7 +1242,7 @@ export default function example() {
 
 Number of elements in the original object
 
-Example:
+<h3>Functional programming example</h3>
 
 ```
 import objectAsArray from "object-as-array";
