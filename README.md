@@ -55,12 +55,6 @@ Returns only the elements of the object that satisfy the test function
 
 <h3>Functional programming</h3>
 
- - Type:
-
-```filter<O extends object>(object : O, handler : (value : O[keyof O], key : keyof O) => boolean) : Partial<O>```
-
- - Example:
-
 ```
 import objectAsArray from "object-as-array";
 
