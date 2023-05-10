@@ -1,3 +1,6 @@
+/**
+ * Reduce Handler Function Type
+ */
 export type ReduceHandler<O extends object, R> = (previousValue: R, currentValue: O[keyof O], currentKey : keyof O) => R
 
 /**

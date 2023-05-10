@@ -1,4 +1,6 @@
-import reduce, { ReduceHandler } from "./reduce";
+import type { ReduceHandler } from './reduce';
+
+import reduce from "./reduce";
 import reverse from "./reverse";
 
 /**

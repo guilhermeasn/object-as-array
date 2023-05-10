@@ -1,4 +1,4 @@
-import { ObjectInfo } from "./types";
+import type { ObjectInfo } from "./types";
 
 /**
  * Sort Handler Function Type

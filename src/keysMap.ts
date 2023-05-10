@@ -1,4 +1,4 @@
-import { MapHandler } from "./map";
+import type { MapHandler } from "./map";
 
 /**
  * Calls a defined callback function on each element of an object,

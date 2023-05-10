@@ -46,27 +46,27 @@ export type ObjectAsArray<O extends object> = {
      * @param handler Test function
      * @returns Elements that will pass the test
      */
-    filter : (handler : FilterHandler<O>) => Partial<O>
+    filter : (handler : Expose<FilterHandler<O>>) => Partial<O>
 
     /**
      * Determines whether one of an object's members satisfies the specified test
      * @param handler Test function
      * @returns Boolean result
      */
-    some : (handler : SomeHandler<O>) => boolean
+    some : (handler : Expose<SomeHandler<O>>) => boolean
 
     /**
      * Determines whether all the members of an object satisfy the specified test
      * @param handler Test function
      * @returns Boolean result
      */
-    every : (handler : EveryHandler<O>) => boolean
+    every : (handler : Expose<EveryHandler<O>>) => boolean
 
     /**
      * Performs the specified action for each element in an object
      * @param handler Function to be performed on each element
      */
-    forEach : (handler : ForEachHandler<O>) => void
+    forEach : (handler : Expose<ForEachHandler<O>>) => void
 
     /**
      * Calls a defined callback function on each element of an object,
@@ -74,7 +74,7 @@ export type ObjectAsArray<O extends object> = {
      * @param handler Callback function
      * @returns Resulting array
      */
-    map : <R>(handler : MapHandler<O, R>) => R[]
+    map : <R>(handler : Expose<MapHandler<O, R>>) => R[]
 
     /**
      * Calls a defined callback function on each element of an object,
@@ -82,7 +82,7 @@ export type ObjectAsArray<O extends object> = {
      * @param handler Callback function
      * @returns Resulting object
      */
-    keysMap : <R>(handler : MapHandler<O, R>) => Record<keyof O, R>
+    keysMap : <R>(handler : Expose<MapHandler<O, R>>) => Record<keyof O, R>
 
     /**
      * Sorts the position of the object's elements
@@ -90,7 +90,7 @@ export type ObjectAsArray<O extends object> = {
      * @param handler Callback function
      * @returns Object reorganized
      */
-    sort : <T extends keyof ObjectInfo<O>>(dataType : T, handler : SortHandler<O, T>) => O
+    sort : <T extends keyof ObjectInfo<O>>(dataType : T, handler : Expose<SortHandler<O, T>>) => O
 
     /**
      * Calls the specified callback function for all the elements in an object. The return value of
@@ -100,7 +100,7 @@ export type ObjectAsArray<O extends object> = {
      * @param initial Initial value to be a joined (optional)
      * @returns Result of the reduction
      */
-    reduce : <R = O[keyof O]>(handler : ReduceHandler<O, R>, initial ?: R) => R | undefined
+    reduce : <R = O[keyof O]>(handler : Expose<ReduceHandler<O, R>>, initial ?: R) => R | undefined
 
     /**
      * Calls the specified callback function for all the elements in an object reversed. The return value of
@@ -110,7 +110,7 @@ export type ObjectAsArray<O extends object> = {
      * @param initial 
      * @returns 
      */
-    reduceRight : <R = O[keyof O]>(handler : ReduceHandler<O, R>, initial ?: R) => R | undefined
+    reduceRight : <R = O[keyof O]>(handler : Expose<ReduceHandler<O, R>>, initial ?: R) => R | undefined
 
     /**
      * Returns a section of an object
@@ -170,7 +170,7 @@ export type ObjectAsArray<O extends object> = {
      * @param handler Test function
      * @returns First element that passed the test or null
      */
-    find : <T extends keyof ObjectInfo<O>>(dataType : T, handler : FindHandler<O>) => ObjectInfo<O>[T] | null
+    find : <T extends keyof ObjectInfo<O>>(dataType : T, handler : Expose<FindHandler<O>>) => ObjectInfo<O>[T] | null
 
     /**
      * Returns the last element that satisfies the test function or returns null
@@ -178,7 +178,7 @@ export type ObjectAsArray<O extends object> = {
      * @param handler Test function
      * @returns Last element that passed the test or null
      */
-    findLast : <T extends keyof ObjectInfo<O>>(dataType : T, handler : FindHandler<O>) => ObjectInfo<O>[T] | null
+    findLast : <T extends keyof ObjectInfo<O>>(dataType : T, handler : Expose<FindHandler<O>>) => ObjectInfo<O>[T] | null
 
     /**
      * Returns the key of the first occurrence of a value in an object or null
@@ -229,3 +229,12 @@ export type ArrayValuesType<T extends ReadonlyArray<unknown>> = (
         ? ElementType
         : never
 )
+
+/**
+ * Forces intellisense to display the built-in types of a complex type
+ */
+export type Expose<T> = (
+    T extends (...args: infer A) => infer R
+        ? (...args: A) => R : T extends infer O
+            ? { [K in keyof O]: O[K] } : T
+);

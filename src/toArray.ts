@@ -1,4 +1,4 @@
-import { ObjectData } from "./types";
+import type { ObjectData } from "./types";
 
 /**
  * Turn object into an array

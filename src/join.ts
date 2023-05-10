@@ -1,5 +1,5 @@
 import toArray from "./toArray";
-import { ObjectData } from "./types";
+import type { ObjectData } from "./types";
 
 /**
  * Joins all elements of an object separated by the specified separator string

@@ -1,4 +1,4 @@
-import { ObjectInfo } from "./types";
+import type { ObjectInfo } from "./types";
 
 /**
  * Find Handler Function Type

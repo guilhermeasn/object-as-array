@@ -1,3 +1,6 @@
+/**
+ * Map Handler Function Type
+ */
 export type MapHandler<O extends object, R> = (value : O[keyof O], key : keyof O) => R
 
 /**
