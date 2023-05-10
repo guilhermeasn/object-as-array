@@ -22,7 +22,7 @@ import toArray from "./toArray";
 import toString from "./toString";
 import valueOf from "./valueOf";
 
-export type * from './types';
+export * from './types';
 
 export default function objectAsArray<O extends object>(object : O) : ObjectAsArray<O> {
 

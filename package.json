@@ -7,7 +7,7 @@
   "types": "dist/types/index.d.ts",
   "scripts": {
     "test": "jest",
-    "build": "rimraf dist && tsc --project tsconfig.json && tsc --project tsconfig.m.json",
+    "build:ps": "./scripts/build.ps1",
     "packpublish": "npm pack --pack-destination .\\packs\\ && npm publish"
   },
   "repository": {
