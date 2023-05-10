@@ -3,7 +3,7 @@ export type ReduceHandler<O extends object, R> = (previousValue: R, currentValue
 /**
  * Calls the specified callback function for all the elements in an object. The return value of
  * the callback function is the accumulated result, and is provided as an argument in the next
- * call to the callback function.
+ * call to the callback function
  * @param object Target object
  * @param handler Callback function
  * @param initial Initial value to be a joined (optional)

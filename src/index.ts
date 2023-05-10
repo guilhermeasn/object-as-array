@@ -22,8 +22,11 @@ import toArray from "./toArray";
 import toString from "./toString";
 import valueOf from "./valueOf";
 
-export * from './types';
-
+/**
+ * Create a functional object
+ * @param object Original object
+ * @returns Functional object methods
+ */
 export default function objectAsArray<O extends object>(object : O) : ObjectAsArray<O> {
 
     let length: number = Object.keys(object).length;

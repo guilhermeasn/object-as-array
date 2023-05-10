@@ -1,7 +1,7 @@
 import { ObjectData } from "./types";
 
 /**
- * turn object into an array
+ * Turn object into an array
  * @param object Target object
  * @param dataType Data of the object to be used: key, value or entrie
  * @returns Resulting array
