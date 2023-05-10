@@ -40,7 +40,7 @@ export default function objectAsArray(object) {
         splice: (changeOriginalObject, ...keys) => splice(object, changeOriginalObject, ...keys),
         concat: assign => concat(object, assign),
         reverse: () => reverse(object),
-        toString: () => toString(object),
+        toString: expand => toString(object, expand),
         toArray: dataType => toArray(object, dataType),
         join: (dataType, separator) => join(object, dataType, separator),
         find: (dataType, handler) => find(object, dataType, handler),

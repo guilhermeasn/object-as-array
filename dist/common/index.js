@@ -45,7 +45,7 @@ function objectAsArray(object) {
         splice: (changeOriginalObject, ...keys) => (0, splice_1.default)(object, changeOriginalObject, ...keys),
         concat: assign => (0, concat_1.default)(object, assign),
         reverse: () => (0, reverse_1.default)(object),
-        toString: () => (0, toString_1.default)(object),
+        toString: expand => (0, toString_1.default)(object, expand),
         toArray: dataType => (0, toArray_1.default)(object, dataType),
         join: (dataType, separator) => (0, join_1.default)(object, dataType, separator),
         find: (dataType, handler) => (0, find_1.default)(object, dataType, handler),

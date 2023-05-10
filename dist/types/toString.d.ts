@@ -1,1 +1,1 @@
-export default function toString(object: object): string;
+export default function toString(object: object, expand?: boolean | number): string;
