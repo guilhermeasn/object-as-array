@@ -9,7 +9,6 @@
 Manipulate a javascript object with some of the most used functions in arrays. You can use the functions in this package with functional or modular programming.
 
 - [Installation](#installation)
-- [Typing](#typing)
 - [Filter](#filter)
 - [Some](#some)
 - [Every](#every)
@@ -48,32 +47,6 @@ Or with *yarn*:
 
 ```
 yarn add object-as-array
-```
-
-## Typing
-
-Methods available for object-as-array functional programming
-
-```
-type ObjectAsArray<O extends object> = {
-
-    filter: (handler: (value: O[keyof O], key: keyof O) => boolean) => Partial<O>;
-
-    some: (handler: (value: O[keyof O], key: keyof O) => boolean) => boolean;
-
-    every: (handler: (value: O[keyof O], key: keyof O) => boolean) => boolean;
-
-    forEach: (handler: (value: O[keyof O], key: keyof O) => void) => void;
-
-    map: <R>(handler: (value: O[keyof O], key: keyof O) => R) => R[];
-
-    keysMap: <R>(handler: (value: O[keyof O], key: keyof O) => R) => Record<keyof O, R>;
-
-    sort: <T extends keyof ObjectInfo<O>>(dataType: T, handler: (a: ObjectInfo<O>[T], b: ObjectInfo<O>[T]) => number) => O;
-
-    
-
-}
 ```
 
 ## Filter
