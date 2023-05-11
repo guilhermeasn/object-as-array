@@ -4,38 +4,39 @@
 [![npm](https://img.shields.io/npm/v/object-as-array.svg)](https://www.npmjs.com/package/object-as-array/v/latest)
 [![downloads](https://img.shields.io/npm/dt/object-as-array)](https://www.npmjs.com/package/object-as-array/)
 
-[Readme in Portuguese](README.PT-BR.md)
-
-Manipulate a javascript object with some of the most used functions in arrays. You can use the functions in this package with functional or modular programming.
+Manipulate a javascript object with some of the most used functions in arrays.
 
 - [Installation](#installation)
-- [Filter](#filter)
-- [Some](#some)
-- [Every](#every)
-- [ForEach](#foreach)
-- [Map](#map)
-- [KeysMap](#keysmap)
-- [Sort](#sort)
-- [Reduce](#reduce)
-- [ReduceRight](#reduceright)
-- [Slice](#slice)
-- [Omit](#omit)
-- [Concat](#concat)
-- [Reverse](#reverse)
-- [ToString](#tostring)
-- [ToArray](#toarray)
-- [Join](#join)
-- [Find](#find)
-- [FindLast](#findlast)
-- [KeyOf](#keyof)
-- [LastKeyOf](#lastkeyof)
-- [ValueOf](#valueof)
-- [Data](#data)
-- [Push](#push)
-- [Length](#length)
+- [Methods](#methods)
+  - [Filter](#filter)
+  - [Some](#some)
+  - [Every](#every)
+  - [ForEach](#foreach)
+  - [Map](#map)
+  - [KeysMap](#keysmap)
+  - [Sort](#sort)
+  - [Reduce](#reduce)
+  - [ReduceRight](#reduceright)
+  - [Slice](#slice)
+  - [Omit](#omit)
+  - [Concat](#concat)
+  - [Reverse](#reverse)
+  - [ToString](#tostring)
+  - [ToArray](#toarray)
+  - [Join](#join)
+  - [Find](#find)
+  - [FindLast](#findlast)
+  - [KeyOf](#keyof)
+  - [LastKeyOf](#lastkeyof)
+  - [ValueOf](#valueof)
+  - [Data](#data)
+  - [Push](#push)
+  - [Length](#length)
 - [About](#about)
+  - [Author](#author)
+  - [License](#license)
 
-## Installation
+# Installation
 
 Add the **object-as-array** package to your project with *npm*:
 
@@ -49,11 +50,21 @@ Or with *yarn*:
 yarn add object-as-array
 ```
 
+# Methods
+
+You can use the functions in this package with functional or modular programming.
+
 ## Filter
 
 Returns only the elements of the object that satisfy the test function
 
-<h4>Functional programming example</h4>
+<h4>Functional programming</h4>
+
+ - Typing:
+
+```(handler: (value: O[keyof O], key: keyof O) => boolean) => Partial<O>```
+
+ - Example:
 
 ```
 import objectAsArray from "object-as-array";
@@ -77,7 +88,13 @@ export default function example() {
 }
 ```
 
-<h4>Modular programming example</h4>
+<h4>Modular programming</h4>
+
+ - Typing:
+
+```<O extends object>(object: O, handler: (value: O[keyof O], key: keyof O) => boolean) => Partial<O>```
+
+ - Example:
 
 ```
 import filter from "object-as-array/filter";
@@ -105,7 +122,13 @@ export default function example() {
 
 Determines whether one of an object's members satisfies the specified test
 
-<h4>Functional programming example</h4>
+<h4>Functional programming</h4>
+
+ - Typing:
+
+```(handler: (value: O[keyof O], key: keyof O) => boolean) => boolean```
+
+ - Example:
 
 ```
 import objectAsArray from "object-as-array";
@@ -129,7 +152,13 @@ export default function example() {
 }
 ```
 
-<h4>Modular programming example</h4>
+<h4>Modular programming</h4>
+
+ - Typing:
+
+```<O extends object>(object: O, handler: (value: O[keyof O], key: keyof O) => boolean) => boolean```
+
+ - Example:
 
 ```
 import some from "object-as-array/some";
@@ -157,7 +186,13 @@ export default function example() {
 
 Determines whether all the members of an object satisfy the specified test
 
-<h4>Functional programming example</h4>
+<h4>Functional programming</h4>
+
+ - Typing:
+
+```(handler: (value: O[keyof O], key: keyof O) => boolean) => boolean```
+
+ - Example:
 
 ```
 import objectAsArray from "object-as-array";
@@ -181,7 +216,13 @@ export default function example() {
 }
 ```
 
-<h4>Modular programming example</h4>
+<h4>Modular programming</h4>
+
+ - Typing:
+
+```<O extends object>(object: O, handler: (value: O[keyof O], key: keyof O) => boolean) => boolean```
+
+ - Example:
 
 ```
 import every from "object-as-array/every";
@@ -209,7 +250,13 @@ export default function example() {
 
 Performs the specified action for each element in an object
 
-<h4>Functional programming example</h4>
+<h4>Functional programming</h4>
+
+ - Typing:
+
+```(handler: (value: O[keyof O], key: keyof O) => void) => void```
+
+ - Example:
 
 ```
 import objectAsArray from "object-as-array";
@@ -237,7 +284,13 @@ export default function example() {
 }
 ```
 
-<h4>Modular programming example</h4>
+<h4>Modular programming</h4>
+
+ - Typing:
+
+```<O extends object>(object: O, handler: (value: O[keyof O], key: keyof O) => void) => void```
+
+ - Example:
 
 ```
 import forEach from "object-as-array/forEach";
@@ -267,9 +320,15 @@ export default function example() {
 
 ## Map
 
+ - Typing:
+
+```<R>(handler: (value: O[keyof O], key: keyof O) => R) => R[]```
+
+ - Example:
+
 Calls a defined callback function on each element of an object, and returns an array that contains the results.
 
-<h4>Functional programming example</h4>
+<h4>Functional programming</h4>
 
 ```
 import objectAsArray from "object-as-array";
@@ -293,7 +352,13 @@ export default function example() {
 }
 ```
 
-<h4>Modular programming example</h4>
+<h4>Modular programming</h4>
+
+ - Typing:
+
+```<O extends object, R>(object: O, handler: (value: O[keyof O], key: keyof O) => R) => R[]```
+
+ - Example:
 
 ```
 import map from "object-as-array/map";
@@ -321,7 +386,13 @@ export default function example() {
 
 Calls a defined callback function on each element of an object, and returns an object with the same keys that contains the results.
 
-<h4>Functional programming example</h4>
+<h4>Functional programming</h4>
+
+ - Typing:
+
+```<R>(handler: (value: O[keyof O], key: keyof O) => R) => Record<keyof O, R>```
+
+ - Example:
 
 ```
 import objectAsArray from "object-as-array";
@@ -345,7 +416,13 @@ export default function example() {
 }
 ```
 
-<h4>Modular programming example</h4>
+<h4>Modular programming</h4>
+
+ - Typing:
+
+```<O extends object, R>(object: O, handler: (value: O[keyof O], key: keyof O) => R) => Record<keyof O, R>```
+
+ - Example:
 
 ```
 import keysMap from "object-as-array/keysMap";
@@ -373,7 +450,13 @@ export default function example() {
 
 Sorts the position of the object's elements
 
-<h4>Functional programming example</h4>
+<h4>Functional programming</h4>
+
+ - Typing:
+
+```<T extends keyof ObjectInfo<O>>(dataType: T, handler: (a: ObjectInfo<O>[T], b: ObjectInfo<O>[T]) => number) => O```
+
+ - Example:
 
 ```
 import objectAsArray from "object-as-array";
@@ -397,7 +480,13 @@ export default function example() {
 }
 ```
 
-<h4>Modular programming example</h4>
+<h4>Modular programming</h4>
+
+ - Typing:
+
+```<O extends object, T extends keyof ObjectInfo<O>>(object: O, dataType: T, handler: (a: ObjectInfo<O>[T], b: ObjectInfo<O>[T]) => number) => O```
+
+ - Example:
 
 ```
 import sort from "object-as-array/sort";
@@ -425,7 +514,13 @@ export default function example() {
 
 Calls the specified callback function for all the elements in an object. The return value of the callback function is the accumulated result, and is provided as an argument in the next call to the callback function
 
-<h4>Functional programming example</h4>
+<h4>Functional programming</h4>
+
+ - Typing:
+
+```<R = O[keyof O]>(handler: (previousValue: R, currentValue: O[keyof O], currentKey: keyof O) => R, initial?: R | undefined) => R | undefined```
+
+ - Example:
 
 ```
 import objectAsArray from "object-as-array";
@@ -449,7 +544,13 @@ export default function example() {
 }
 ```
 
-<h4>Modular programming example</h4>
+<h4>Modular programming</h4>
+
+ - Typing:
+
+```<O extends object, R = O[keyof O]>(object: O, handler: (previousValue: R, currentValue: O[keyof O], currentKey: keyof O) => R, initial?: R | undefined) => R | undefined```
+
+ - Example:
 
 ```
 import reduce from "object-as-array/reduce";
@@ -477,7 +578,13 @@ export default function example() {
 
 Calls the specified callback function for all the elements in an object reversed. The return value of the callback function is the accumulated result, and is provided as an argument in the next call to the callback function
 
-<h4>Functional programming example</h4>
+<h4>Functional programming</h4>
+
+ - Typing:
+
+```<R = O[keyof O]>(handler: (previousValue: R, currentValue: O[keyof O], currentKey: keyof O) => R, initial?: R | undefined) => R | undefined```
+
+ - Example:
 
 ```
 import objectAsArray from "object-as-array";
@@ -501,7 +608,13 @@ export default function example() {
 }
 ```
 
-<h4>Modular programming example</h4>
+<h4>Modular programming</h4>
+
+ - Typing:
+
+```<O extends object, R = O[keyof O]>(object: O, handler: (previousValue: R, currentValue: O[keyof O], currentKey: keyof O) => R, initial?: R | undefined) => R | undefined```
+
+ - Example:
 
 ```
 import reduceRight from "object-as-array/reduceRight";
@@ -529,7 +642,13 @@ export default function example() {
 
 Returns a section of an object
 
-<h4>Functional programming example</h4>
+<h4>Functional programming</h4>
+
+ - Typing:
+
+```<K extends (keyof O)[]>(...keys: K) => Pick<O, ArrayValuesType<K>>```
+
+ - Example:
 
 ```
 import objectAsArray from "object-as-array";
@@ -553,7 +672,13 @@ export default function example() {
 }
 ```
 
-<h4>Modular programming example</h4>
+<h4>Modular programming</h4>
+
+ - Typing:
+
+```<O extends object, K extends (keyof O)[]>(object: O, ...keys: K) => Pick<O, ArrayValuesType<K>>```
+
+ - Example:
 
 ```
 import slice from "object-as-array/slice";
@@ -581,7 +706,13 @@ export default function example() {
 
 Returns the elements that did not have their keys specified
     
-<h4>Functional programming example</h4>
+<h4>Functional programming</h4>
+
+ - Typing:
+
+```<K extends (keyof O)[]>(...keys: K) => Omit<O, ArrayValuesType<K>>```
+
+ - Example:
 
 ```
 import objectAsArray from "object-as-array";
@@ -605,7 +736,13 @@ export default function example() {
 }
 ```
 
-<h4>Modular programming example</h4>
+<h4>Modular programming</h4>
+
+ - Typing:
+
+```<O extends object, K extends (keyof O)[]>(object: O, ...keys: K) => Omit<O, ArrayValuesType<K>>```
+
+ - Example:
 
 ```
 import omit from "object-as-array/omit";
@@ -633,7 +770,13 @@ export default function example() {
 
 Combines two objects. This method returns a new object without modifying any existing object
    
-<h4>Functional programming example</h4>
+<h4>Functional programming</h4>
+
+ - Typing:
+
+```<A extends object>(assign: A) => O & A```
+
+ - Example:
 
 ```
 import objectAsArray from "object-as-array";
@@ -657,7 +800,13 @@ export default function example() {
 }
 ```
 
-<h4>Modular programming example</h4>
+<h4>Modular programming</h4>
+
+ - Typing:
+
+```<O extends object, A extends object>(object: O, assign: A) => O & A```
+
+ - Example:
 
 ```
 import concat from "object-as-array/concat";
@@ -685,7 +834,13 @@ export default function example() {
 
 Reverses the position of object elements
 
-<h4>Functional programming example</h4>
+<h4>Functional programming</h4>
+
+ - Typing:
+
+```() => O```
+
+ - Example:
 
 ```
 import objectAsArray from "object-as-array";
@@ -709,7 +864,13 @@ export default function example() {
 }
 ```
 
-<h4>Modular programming example</h4>
+<h4>Modular programming</h4>
+
+ - Typing:
+
+```<O extends object>(object: O) => O```
+
+ - Example:
 
 ```
 import reverse from "object-as-array/reverse";
@@ -737,7 +898,13 @@ export default function example() {
 
 Turn object into a string
 
-<h4>Functional programming example</h4>
+<h4>Functional programming</h4>
+
+ - Typing:
+
+```(expand?: boolean | number) => string```
+
+ - Example:
 
 ```
 import objectAsArray from "object-as-array";
@@ -761,7 +928,13 @@ export default function example() {
 }
 ```
 
-<h4>Modular programming example</h4>
+<h4>Modular programming</h4>
+
+ - Typing:
+
+```<O extends object>(object: O, expand?: boolean | number) => string```
+
+ - Example:
 
 ```
 import toString from "object-as-array/toString";
@@ -789,7 +962,13 @@ export default function example() {
 
 Turn object into an array
 
-<h4>Functional programming example</h4>
+<h4>Functional programming</h4>
+
+ - Typing:
+
+```<T extends keyof ObjectData<O>>(dataType: T) => ObjectData<O>[T]```
+
+ - Example:
 
 ```
 import objectAsArray from "object-as-array";
@@ -813,7 +992,13 @@ export default function example() {
 }
 ```
 
-<h4>Modular programming example</h4>
+<h4>Modular programming</h4>
+
+ - Typing:
+
+```<O extends object, T extends keyof ObjectData<O>>(object: O, dataType: T) => ObjectData<O>[T]```
+
+ - Example:
 
 ```
 import toArray from "object-as-array/toArray";
@@ -840,9 +1025,14 @@ export default function example() {
 ## Join
 
 Joins all elements of an object separated by the specified separator string
-     
 
-<h4>Functional programming example</h4>
+<h4>Functional programming</h4>
+
+ - Typing:
+
+```<T extends keyof ObjectData<O>>(dataType: T, separator?: (T extends "entries" ? string | [string, string] : string) | undefined) => string```
+
+ - Example:
 
 ```
 import objectAsArray from "object-as-array";
@@ -866,7 +1056,13 @@ export default function example() {
 }
 ```
 
-<h4>Modular programming example</h4>
+<h4>Modular programming</h4>
+
+ - Typing:
+
+```<O extends object, T extends keyof ObjectData<O>>(object: O, dataType: T, separator?: (T extends "entries" ? string | [string, string] : string) | undefined) => string```
+
+ - Example:
 
 ```
 import join from "object-as-array/join";
@@ -893,9 +1089,14 @@ export default function example() {
 ## Find
 
 Returns the first element that satisfies the test function or returns null
-    
 
-<h4>Functional programming example</h4>
+<h4>Functional programming</h4>
+
+ - Typing:
+
+```<T extends keyof ObjectInfo<O>>(dataType: T, handler: (value: O[keyof O], key: keyof O) => boolean) => ObjectInfo<O>[T] | null```
+
+ - Example:
 
 ```
 import objectAsArray from "object-as-array";
@@ -919,7 +1120,13 @@ export default function example() {
 }
 ```
 
-<h4>Modular programming example</h4>
+<h4>Modular programming</h4>
+
+ - Typing:
+
+```<O extends object, T extends keyof ObjectInfo<O>>(object: O, dataType: T, handler: (value: O[keyof O], key: keyof O) => boolean) => ObjectInfo<O>[T] | null```
+
+ - Example:
 
 ```
 import find from "object-as-array/find";
@@ -946,9 +1153,14 @@ export default function example() {
 ## FindLast
 
 Returns the last element that satisfies the test function or returns null
-    
 
-<h4>Functional programming example</h4>
+<h4>Functional programming</h4>
+
+ - Typing:
+
+```<T extends keyof ObjectInfo<O>>(dataType: T, handler: (value: O[keyof O], key: keyof O) => boolean) => ObjectInfo<O>[T] | null```
+
+ - Example:
 
 ```
 import objectAsArray from "object-as-array";
@@ -972,7 +1184,13 @@ export default function example() {
 }
 ```
 
-<h4>Modular programming example</h4>
+<h4>Modular programming</h4>
+
+ - Typing:
+
+```<O extends object, T extends keyof ObjectInfo<O>>(object: O, dataType: T, handler: (value: O[keyof O], key: keyof O) => boolean) => ObjectInfo<O>[T] | null```
+
+ - Example:
 
 ```
 import findLast from "object-as-array/findLast";
@@ -999,9 +1217,14 @@ export default function example() {
 ## KeyOf
 
 Returns the key of the first occurrence of a value in an object or null
-     
 
-<h4>Functional programming example</h4>
+<h4>Functional programming</h4>
+
+ - Typing:
+
+```(value: O[keyof O]) => keyof O | null```
+
+ - Example:
 
 ```
 import objectAsArray from "object-as-array";
@@ -1025,7 +1248,13 @@ export default function example() {
 }
 ```
 
-<h4>Modular programming example</h4>
+<h4>Modular programming</h4>
+
+ - Typing:
+
+```<O extends object>(object: O, value: O[keyof O]) => keyof O | null```
+
+ - Example:
 
 ```
 import keyOf from "object-as-array/keyOf";
@@ -1052,9 +1281,14 @@ export default function example() {
 ## LastKeyOf
 
 Returns the key of the last occurrence of a value in an object or null
-     
 
-<h4>Functional programming example</h4>
+<h4>Functional programming</h4>
+
+ - Typing:
+
+```(value: O[keyof O]) => keyof O | null```
+
+ - Example:
 
 ```
 import objectAsArray from "object-as-array";
@@ -1078,7 +1312,13 @@ export default function example() {
 }
 ```
 
-<h4>Modular programming example</h4>
+<h4>Modular programming</h4>
+
+ - Typing:
+
+```<O extends object>(object: O, value: O[keyof O]) => keyof O | null```
+
+ - Example:
 
 ```
 import lastKeyOf from "object-as-array/lastKeyOf";
@@ -1106,7 +1346,13 @@ export default function example() {
 
 Returns the value of an element of an object
      
-<h4>Functional programming example</h4>
+<h4>Functional programming</h4>
+
+ - Typing:
+
+```<K extends keyof O>(key: K) => O[K]```
+
+ - Example:
 
 ```
 import objectAsArray from "object-as-array";
@@ -1130,7 +1376,13 @@ export default function example() {
 }
 ```
 
-<h4>Modular programming example</h4>
+<h4>Modular programming</h4>
+
+ - Typing:
+
+```<O extends object, K extends keyof O>(object: O, key: K) => O[K]```
+
+ - Example:
 
 ```
 import valueOf from "object-as-array/valueOf";
@@ -1158,7 +1410,13 @@ export default function example() {
 
 Original object elements
      
-<h4>Functional programming example</h4>
+<h4>Functional programming</h4>
+
+ - Typing:
+
+```() => O```
+
+ - Example:
 
 ```
 import objectAsArray from "object-as-array";
@@ -1186,7 +1444,13 @@ export default function example() {
 
 Adds or modifies the original object
     
-<h4>Functional programming example</h4>
+<h4>Functional programming</h4>
+
+ - Typing:
+
+```(assign: Partial<O>) => number```
+
+ - Example:
 
 ```
 import objectAsArray from "object-as-array";
@@ -1214,7 +1478,13 @@ export default function example() {
 
 Number of elements in the original object
 
-<h4>Functional programming example</h4>
+<h4>Functional programming</h4>
+
+ - Typing:
+
+```number```
+
+ - Example:
 
 ```
 import objectAsArray from "object-as-array";
@@ -1238,12 +1508,12 @@ export default function example() {
 }
 ```
 
-## About
+# About
 
-**Author**
+## Author
 
 * **Guilherme Neves** - [github](https://github.com/guilhermeasn/) - [website](https://gn.dev.br/)
 
-**License**
+## License
 
 This project is under the MIT license - see the [LICENSE](https://github.com/guilhermeasn/mask-hooks/blob/master/LICENSE) file for details.
