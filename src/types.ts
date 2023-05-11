@@ -120,12 +120,11 @@ export type ObjectAsArray<O extends object> = {
     slice : <K extends Array<keyof O>>(...keys : K) => Pick<O, ArrayValuesType<K>>
 
     /**
-     * Returns the elements that did not have their keys specified,
-     * being able to delete these elements from the original object or not
+     * Returns the elements that did not have their keys specified
      * @param changeOriginalObject Decides whether or not to modify the original object
      * @returns Returns missing or deleted keys
      */
-    splice : <K extends Array<keyof O>>(changeOriginalObject : boolean, ...keys : K) => Omit<O, ArrayValuesType<K>>
+    omit : <K extends Array<keyof O>>(...keys : K) => Omit<O, ArrayValuesType<K>>
 
     /**
      * Combines two objects
