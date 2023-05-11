@@ -53,6 +53,13 @@ yarn add object-as-array
 # Methods
 
 You can use the functions in this package with functional or modular programming.
+In functional programming, methods are derived from the objectAsArray function, see its typing below:
+
+```<O extends object>(object: O): ObjectAsArray<O>```
+
+Note, the keys of ObjectInfo and ObjectData types are:
+
+```key | value | entrie```
 
 ## Filter
 
