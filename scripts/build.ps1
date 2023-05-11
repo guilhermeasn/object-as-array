@@ -1,9 +1,9 @@
 if(test-path ./dist) {
-    rm ./dist -r -force
+    Remove-Item ./dist -r -force
 }
 
 yarn tsc --project tsconfig.json
 
-copy ./package.json ./dist/package.json
-copy ./README.md ./dist/README.md
-copy ./LICENSE ./dist/LICENSE
+Copy-Item ./package.json ./dist/package.json
+Copy-Item ./README.md ./dist/README.md
+Copy-Item ./LICENSE ./dist/LICENSE

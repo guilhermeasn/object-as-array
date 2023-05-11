@@ -1,4 +1,4 @@
 yarn build:ps
-cd ./dist
+Set-Location ./dist
 npm pack --pack-destination ..\\packs\\
 npm publish
