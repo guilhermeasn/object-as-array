@@ -2,14 +2,18 @@
   "name": "object-as-array",
   "version": "1.0.0",
   "description": "Manipulate a javascript object with some of the most used functions in arrays",
-  "main": "index.js",
-  "types": "index.d.ts",
+  "source": "src/index.ts",
+  "main": "dist/index.js",
+  "module": "dist/module.js",
+  "types": "dist/types.d.ts",
   "scripts": {
     "test": "jest",
+    "check": "tsc --noEmit",
     "build:sh": "sh ./scripts/build.sh",
     "build:ps": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./scripts/build.ps1",
     "publish:sh": "sh ./scripts/publish.sh",
-    "publish:ps": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./scripts/publish.ps1"
+    "publish:ps": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./scripts/publish.ps1",
+    "parcel": "parcel build"
   },
   "repository": {
     "type": "git",
@@ -29,9 +33,13 @@
   },
   "homepage": "https://github.com/guilhermeasn/object-as-array#readme",
   "devDependencies": {
+    "@parcel/optimizer-terser": "^2.8.3",
+    "@parcel/packager-ts": "2.8.3",
+    "@parcel/transformer-typescript-types": "2.8.3",
     "@types/jest": "^29.5.1",
     "@types/node": "^20.1.1",
     "jest": "^29.5.0",
+    "parcel": "^2.8.3",
     "ts-jest": "^29.1.0",
     "typescript": "^5.0.4"
   },
