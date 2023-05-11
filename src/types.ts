@@ -233,7 +233,7 @@ export type ArrayValuesType<T extends ReadonlyArray<unknown>> = (
  * Forces intellisense to display the built-in types of a complex type
  */
 export type Expose<T> = (
-    T extends (...args: infer A) => infer R
-        ? (...args: A) => R : T extends infer O
-            ? { [K in keyof O]: O[K] } : T
+    T extends (...args: infer A) => infer R ? (...args: A) => R :
+    T extends object ? T extends infer O ?
+    { [K in keyof O]: O[K] } : never : T
 );

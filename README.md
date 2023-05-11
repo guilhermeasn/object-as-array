@@ -327,15 +327,15 @@ export default function example() {
 
 ## Map
 
+Calls a defined callback function on each element of an object, and returns an array that contains the results.
+
+<h4>Functional programming</h4>
+
  - Typing:
 
 ```<R>(handler: (value: O[keyof O], key: keyof O) => R) => R[]```
 
  - Example:
-
-Calls a defined callback function on each element of an object, and returns an array that contains the results.
-
-<h4>Functional programming</h4>
 
 ```
 import objectAsArray from "object-as-array";
@@ -1352,7 +1352,7 @@ export default function example() {
 ## ValueOf
 
 Returns the value of an element of an object
-     
+
 <h4>Functional programming</h4>
 
  - Typing:
@@ -1416,7 +1416,7 @@ export default function example() {
 ## Data
 
 Original object elements
-     
+
 <h4>Functional programming</h4>
 
  - Typing:
@@ -1516,6 +1516,8 @@ export default function example() {
 ```
 
 # About
+
+Project details
 
 ## Author
 
