@@ -67,7 +67,7 @@ export default function HomepageFeatures(): JSX.Element {
 
             <Feature
                 title='Easy to Use'
-                description={<>asd</>}
+                description={<>Manipulate a javascript object with some of the most used functions in arrays.</>}
             />
 
         </div>
