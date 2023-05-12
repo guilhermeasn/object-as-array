@@ -1,6 +1,6 @@
 {
   "name": "object-as-array",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Manipulate a javascript object with some of the most used functions in arrays",
   "main": "index.js",
   "types": "index.d.ts",
@@ -27,7 +27,7 @@
   "bugs": {
     "url": "https://github.com/guilhermeasn/object-as-array/issues"
   },
-  "homepage": "https://github.com/guilhermeasn/object-as-array#readme",
+  "homepage": "https://guilhermeasn.github.io/object-as-array/",
   "devDependencies": {
     "@types/jest": "^29.5.1",
     "@types/node": "^20.1.1",
