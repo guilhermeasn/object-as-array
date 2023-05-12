@@ -106,9 +106,9 @@ export type ObjectAsArray<O extends object> = {
      * Calls the specified callback function for all the elements in an object reversed. The return value of
      * the callback function is the accumulated result, and is provided as an argument in the next
      * call to the callback function
-     * @param handler 
-     * @param initial 
-     * @returns 
+     * @param handler Callback function
+     * @param initial Initial value to be a joined (optional)
+     * @returns Result of the reduction
      */
     reduceRight : <R = O[keyof O]>(handler : Expose<ReduceHandler<O, R>>, initial ?: R) => R | undefined
 
@@ -233,7 +233,7 @@ export type ArrayValuesType<T extends ReadonlyArray<unknown>> = (
  * Forces intellisense to display the built-in types of a complex type
  */
 export type Expose<T> = (
-    T extends (...args: infer A) => infer R
-        ? (...args: A) => R : T extends infer O
-            ? { [K in keyof O]: O[K] } : T
+    T extends (...args: infer A) => infer R ? (...args: A) => R :
+    T extends object ? T extends infer O ?
+    { [K in keyof O]: O[K] } : never : T
 );
