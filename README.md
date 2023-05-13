@@ -12,13 +12,13 @@ Manipulate a javascript object with some of the most used functions in arrays.
 
 Add the **object-as-array** package to your project with *npm*:
 
-```
+```sh
 npm install object-as-array
 ```
 
 Or with *yarn*:
 
-```
+```sh
 yarn add object-as-array
 ```
 
