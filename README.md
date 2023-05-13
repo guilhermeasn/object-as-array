@@ -51,13 +51,11 @@ Available resources:
  - **Push**: Adds or modifies the original object
  - **Length**: Number of elements in the original object
 
-## Example
-
-### Filter Function
+## Example with Filter Function
 
 Functional programming:
 
-```
+```ts
 import objectAsArray from "object-as-array";
 
 export default function example() {
@@ -81,7 +79,7 @@ export default function example() {
 
 Modular programming:
 
-```
+```ts
 import filter from "object-as-array/filter";
 
 export default function example() {
@@ -102,8 +100,6 @@ export default function example() {
 
 }
 ```
-
-
 
 ## Author
 
