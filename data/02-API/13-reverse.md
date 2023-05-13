@@ -10,7 +10,9 @@ Reverses the position of object elements
 
  - Typing:
 
-```() => O```
+```ts
+() => O
+```
 
  - Example:
 
@@ -40,7 +42,9 @@ export default function example() {
 
  - Typing:
 
-```<O extends object>(object: O) => O```
+```ts
+<O extends object>(object: O) => O
+```
 
  - Example:
 

@@ -10,7 +10,9 @@ Original object elements
 
  - Typing:
 
-```() => O```
+```ts
+() => O
+```
 
  - Example:
 

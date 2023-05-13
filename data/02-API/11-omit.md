@@ -10,7 +10,9 @@ Returns the elements that did not have their keys specified
 
  - Typing:
 
-```<K extends (keyof O)[]>(...keys: K) => Omit<O, ArrayValuesType<K>>```
+```ts
+<K extends (keyof O)[]>(...keys: K) => Omit<O, ArrayValuesType<K>>
+```
 
  - Example:
 
@@ -40,7 +42,9 @@ export default function example() {
 
  - Typing:
 
-```<O extends object, K extends (keyof O)[]>(object: O, ...keys: K) => Omit<O, ArrayValuesType<K>>```
+```ts
+<O extends object, K extends (keyof O)[]>(object: O, ...keys: K) => Omit<O, ArrayValuesType<K>>
+```
 
  - Example:
 

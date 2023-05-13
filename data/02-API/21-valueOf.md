@@ -10,7 +10,9 @@ Returns the value of an element of an object
 
  - Typing:
 
-```<K extends keyof O>(key: K) => O[K]```
+```ts
+<K extends keyof O>(key: K) => O[K]
+```
 
  - Example:
 
@@ -40,7 +42,9 @@ export default function example() {
 
  - Typing:
 
-```<O extends object, K extends keyof O>(object: O, key: K) => O[K]```
+```ts
+<O extends object, K extends keyof O>(object: O, key: K) => O[K]
+```
 
  - Example:
 

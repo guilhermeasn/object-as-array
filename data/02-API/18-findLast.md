@@ -10,7 +10,9 @@ Returns the last element that satisfies the test function or returns null
 
  - Typing:
 
-```<T extends keyof ObjectInfo<O>>(dataType: T, handler: (value: O[keyof O], key: keyof O) => boolean) => ObjectInfo<O>[T] | null```
+```ts
+<T extends keyof ObjectInfo<O>>(dataType: T, handler: (value: O[keyof O], key: keyof O) => boolean) => ObjectInfo<O>[T] | null
+```
 
  - Example:
 
@@ -40,7 +42,9 @@ export default function example() {
 
  - Typing:
 
-```<O extends object, T extends keyof ObjectInfo<O>>(object: O, dataType: T, handler: (value: O[keyof O], key: keyof O) => boolean) => ObjectInfo<O>[T] | null```
+```ts
+<O extends object, T extends keyof ObjectInfo<O>>(object: O, dataType: T, handler: (value: O[keyof O], key: keyof O) => boolean) => ObjectInfo<O>[T] | null
+```
 
  - Example:
 

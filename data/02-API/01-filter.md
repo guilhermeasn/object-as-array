@@ -10,7 +10,9 @@ Returns only the elements of the object that satisfy the test function
 
  - Typing:
 
-```(handler: (value: O[keyof O], key: keyof O) => boolean) => Partial<O>```
+```ts
+(handler: (value: O[keyof O], key: keyof O) => boolean) => Partial<O>
+```
 
  - Example:
 
@@ -40,7 +42,9 @@ export default function example() {
 
  - Typing:
 
-```<O extends object>(object: O, handler: (value: O[keyof O], key: keyof O) => boolean) => Partial<O>```
+```ts
+<O extends object>(object: O, handler: (value: O[keyof O], key: keyof O) => boolean) => Partial<O>
+```
 
  - Example:
 

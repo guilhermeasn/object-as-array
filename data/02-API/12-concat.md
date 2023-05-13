@@ -10,7 +10,9 @@ Combines two objects. This method returns a new object without modifying any exi
 
  - Typing:
 
-```<A extends object>(assign: A) => O & A```
+```ts
+<A extends object>(assign: A) => O & A
+```
 
  - Example:
 
@@ -40,7 +42,9 @@ export default function example() {
 
  - Typing:
 
-```<O extends object, A extends object>(object: O, assign: A) => O & A```
+```ts
+<O extends object, A extends object>(object: O, assign: A) => O & A
+```
 
  - Example:
 

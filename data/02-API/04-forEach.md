@@ -10,7 +10,9 @@ Performs the specified action for each element in an object
 
  - Typing:
 
-```(handler: (value: O[keyof O], key: keyof O) => void) => void```
+```ts
+(handler: (value: O[keyof O], key: keyof O) => void) => void
+```
 
  - Example:
 
@@ -44,7 +46,9 @@ export default function example() {
 
  - Typing:
 
-```<O extends object>(object: O, handler: (value: O[keyof O], key: keyof O) => void) => void```
+```ts
+<O extends object>(object: O, handler: (value: O[keyof O], key: keyof O) => void) => void
+```
 
  - Example:
 

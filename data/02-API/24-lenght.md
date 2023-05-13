@@ -10,7 +10,9 @@ Number of elements in the original object
 
  - Typing:
 
-```number```
+```ts
+number
+```
 
  - Example:
 

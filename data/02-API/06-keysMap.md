@@ -10,7 +10,9 @@ Calls a defined callback function on each element of an object, and returns an o
 
  - Typing:
 
-```<R>(handler: (value: O[keyof O], key: keyof O) => R) => Record<keyof O, R>```
+```ts
+<R>(handler: (value: O[keyof O], key: keyof O) => R) => Record<keyof O, R>
+```
 
  - Example:
 
@@ -40,7 +42,9 @@ export default function example() {
 
  - Typing:
 
-```<O extends object, R>(object: O, handler: (value: O[keyof O], key: keyof O) => R) => Record<keyof O, R>```
+```ts
+<O extends object, R>(object: O, handler: (value: O[keyof O], key: keyof O) => R) => Record<keyof O, R>
+```
 
  - Example:
 

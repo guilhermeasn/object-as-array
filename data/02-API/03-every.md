@@ -10,7 +10,9 @@ Determines whether all the members of an object satisfy the specified test
 
  - Typing:
 
-```(handler: (value: O[keyof O], key: keyof O) => boolean) => boolean```
+```ts
+(handler: (value: O[keyof O], key: keyof O) => boolean) => boolean
+```
 
  - Example:
 
@@ -40,7 +42,9 @@ export default function example() {
 
  - Typing:
 
-```<O extends object>(object: O, handler: (value: O[keyof O], key: keyof O) => boolean) => boolean```
+```ts
+<O extends object>(object: O, handler: (value: O[keyof O], key: keyof O) => boolean) => boolean
+```
 
  - Example:
 

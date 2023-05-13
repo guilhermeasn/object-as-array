@@ -10,7 +10,9 @@ Returns the key of the first occurrence of a value in an object or null
 
  - Typing:
 
-```(value: O[keyof O]) => keyof O | null```
+```ts
+(value: O[keyof O]) => keyof O | null
+```
 
  - Example:
 
@@ -40,7 +42,9 @@ export default function example() {
 
  - Typing:
 
-```<O extends object>(object: O, value: O[keyof O]) => keyof O | null```
+```ts
+<O extends object>(object: O, value: O[keyof O]) => keyof O | null
+```
 
  - Example:
 

@@ -10,7 +10,9 @@ Calls the specified callback function for all the elements in an object reversed
 
  - Typing:
 
-```<R = O[keyof O]>(handler: (previousValue: R, currentValue: O[keyof O], currentKey: keyof O) => R, initial?: R | undefined) => R | undefined```
+```ts
+<R = O[keyof O]>(handler: (previousValue: R, currentValue: O[keyof O], currentKey: keyof O) => R, initial?: R | undefined) => R | undefined
+```
 
  - Example:
 
@@ -40,7 +42,9 @@ export default function example() {
 
  - Typing:
 
-```<O extends object, R = O[keyof O]>(object: O, handler: (previousValue: R, currentValue: O[keyof O], currentKey: keyof O) => R, initial?: R | undefined) => R | undefined```
+```ts
+<O extends object, R = O[keyof O]>(object: O, handler: (previousValue: R, currentValue: O[keyof O], currentKey: keyof O) => R, initial?: R | undefined) => R | undefined
+```
 
  - Example:
 

@@ -10,7 +10,9 @@ Adds or modifies the original object
 
  - Typing:
 
-```(assign: Partial<O>) => number```
+```ts
+(assign: Partial<O>) => number
+```
 
  - Example:
 

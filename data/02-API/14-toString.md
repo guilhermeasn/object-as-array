@@ -10,7 +10,9 @@ Turn object into a string
 
  - Typing:
 
-```(expand?: boolean | number) => string```
+```ts
+(expand?: boolean | number) => string
+```
 
  - Example:
 
@@ -40,7 +42,9 @@ export default function example() {
 
  - Typing:
 
-```<O extends object>(object: O, expand?: boolean | number) => string```
+```ts
+<O extends object>(object: O, expand?: boolean | number) => string
+```
 
  - Example:
 

@@ -10,7 +10,9 @@ Returns a section of an object
 
  - Typing:
 
-```<K extends (keyof O)[]>(...keys: K) => Pick<O, ArrayValuesType<K>>```
+```ts
+<K extends (keyof O)[]>(...keys: K) => Pick<O, ArrayValuesType<K>>
+```
 
  - Example:
 
@@ -40,7 +42,9 @@ export default function example() {
 
  - Typing:
 
-```<O extends object, K extends (keyof O)[]>(object: O, ...keys: K) => Pick<O, ArrayValuesType<K>>```
+```ts
+<O extends object, K extends (keyof O)[]>(object: O, ...keys: K) => Pick<O, ArrayValuesType<K>>
+```
 
  - Example:
 

@@ -10,7 +10,9 @@ Turn object into an array
 
  - Typing:
 
-```<T extends keyof ObjectData<O>>(dataType: T) => ObjectData<O>[T]```
+```ts
+<T extends keyof ObjectData<O>>(dataType: T) => ObjectData<O>[T]
+```
 
  - Example:
 
@@ -40,7 +42,9 @@ export default function example() {
 
  - Typing:
 
-```<O extends object, T extends keyof ObjectData<O>>(object: O, dataType: T) => ObjectData<O>[T]```
+```ts
+<O extends object, T extends keyof ObjectData<O>>(object: O, dataType: T) => ObjectData<O>[T]
+```
 
  - Example:
 
