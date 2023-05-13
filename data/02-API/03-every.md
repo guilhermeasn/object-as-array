@@ -14,7 +14,7 @@ Determines whether all the members of an object satisfy the specified test
 
  - Example:
 
-```
+```ts
 import objectAsArray from "object-as-array";
 
 export default function example() {
@@ -44,7 +44,7 @@ export default function example() {
 
  - Example:
 
-```
+```ts
 import every from "object-as-array/every";
 
 export default function example() {

@@ -14,7 +14,7 @@ Turn object into an array
 
  - Example:
 
-```
+```ts
 import objectAsArray from "object-as-array";
 
 export default function example() {
@@ -44,7 +44,7 @@ export default function example() {
 
  - Example:
 
-```
+```ts
 import toArray from "object-as-array/toArray";
 
 export default function example() {

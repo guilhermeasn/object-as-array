@@ -14,7 +14,7 @@ Number of elements in the original object
 
  - Example:
 
-```
+```ts
 import objectAsArray from "object-as-array";
 
 export default function example() {

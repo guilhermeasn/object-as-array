@@ -14,7 +14,7 @@ Returns the first element that satisfies the test function or returns null
 
  - Example:
 
-```
+```ts
 import objectAsArray from "object-as-array";
 
 export default function example() {
@@ -44,7 +44,7 @@ export default function example() {
 
  - Example:
 
-```
+```ts
 import find from "object-as-array/find";
 
 export default function example() {

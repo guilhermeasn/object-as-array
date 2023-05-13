@@ -14,7 +14,7 @@ Returns the last element that satisfies the test function or returns null
 
  - Example:
 
-```
+```ts
 import objectAsArray from "object-as-array";
 
 export default function example() {
@@ -44,7 +44,7 @@ export default function example() {
 
  - Example:
 
-```
+```ts
 import findLast from "object-as-array/findLast";
 
 export default function example() {

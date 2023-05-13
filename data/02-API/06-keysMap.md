@@ -14,7 +14,7 @@ Calls a defined callback function on each element of an object, and returns an o
 
  - Example:
 
-```
+```ts
 import objectAsArray from "object-as-array";
 
 export default function example() {
@@ -44,7 +44,7 @@ export default function example() {
 
  - Example:
 
-```
+```ts
 import keysMap from "object-as-array/keysMap";
 
 export default function example() {

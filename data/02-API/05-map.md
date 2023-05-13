@@ -44,7 +44,7 @@ export default function example() {
 
  - Example:
 
-```
+```ts
 import map from "object-as-array/map";
 
 export default function example() {

@@ -14,7 +14,7 @@ Original object elements
 
  - Example:
 
-```
+```ts
 import objectAsArray from "object-as-array";
 
 export default function example() {

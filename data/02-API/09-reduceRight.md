@@ -14,7 +14,7 @@ Calls the specified callback function for all the elements in an object reversed
 
  - Example:
 
-```
+```ts
 import objectAsArray from "object-as-array";
 
 export default function example() {
@@ -44,7 +44,7 @@ export default function example() {
 
  - Example:
 
-```
+```ts
 import reduceRight from "object-as-array/reduceRight";
 
 export default function example() {

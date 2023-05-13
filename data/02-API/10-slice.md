@@ -14,7 +14,7 @@ Returns a section of an object
 
  - Example:
 
-```
+```ts
 import objectAsArray from "object-as-array";
 
 export default function example() {
@@ -44,7 +44,7 @@ export default function example() {
 
  - Example:
 
-```
+```ts
 import slice from "object-as-array/slice";
 
 export default function example() {

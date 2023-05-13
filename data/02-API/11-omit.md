@@ -14,7 +14,7 @@ Returns the elements that did not have their keys specified
 
  - Example:
 
-```
+```ts
 import objectAsArray from "object-as-array";
 
 export default function example() {
@@ -44,7 +44,7 @@ export default function example() {
 
  - Example:
 
-```
+```ts
 import omit from "object-as-array/omit";
 
 export default function example() {

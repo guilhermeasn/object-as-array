@@ -14,7 +14,7 @@ Returns the value of an element of an object
 
  - Example:
 
-```
+```ts
 import objectAsArray from "object-as-array";
 
 export default function example() {
@@ -44,7 +44,7 @@ export default function example() {
 
  - Example:
 
-```
+```ts
 import valueOf from "object-as-array/valueOf";
 
 export default function example() {

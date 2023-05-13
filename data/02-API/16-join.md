@@ -14,7 +14,7 @@ Joins all elements of an object separated by the specified separator string
 
  - Example:
 
-```
+```ts
 import objectAsArray from "object-as-array";
 
 export default function example() {
@@ -44,7 +44,7 @@ export default function example() {
 
  - Example:
 
-```
+```ts
 import join from "object-as-array/join";
 
 export default function example() {

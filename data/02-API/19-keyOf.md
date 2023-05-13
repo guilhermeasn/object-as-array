@@ -14,7 +14,7 @@ Returns the key of the first occurrence of a value in an object or null
 
  - Example:
 
-```
+```ts
 import objectAsArray from "object-as-array";
 
 export default function example() {
@@ -44,7 +44,7 @@ export default function example() {
 
  - Example:
 
-```
+```ts
 import keyOf from "object-as-array/keyOf";
 
 export default function example() {

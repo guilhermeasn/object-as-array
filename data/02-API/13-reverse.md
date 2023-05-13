@@ -14,7 +14,7 @@ Reverses the position of object elements
 
  - Example:
 
-```
+```ts
 import objectAsArray from "object-as-array";
 
 export default function example() {
@@ -44,7 +44,7 @@ export default function example() {
 
  - Example:
 
-```
+```ts
 import reverse from "object-as-array/reverse";
 
 export default function example() {

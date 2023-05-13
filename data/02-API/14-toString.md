@@ -14,7 +14,7 @@ Turn object into a string
 
  - Example:
 
-```
+```ts
 import objectAsArray from "object-as-array";
 
 export default function example() {
@@ -44,7 +44,7 @@ export default function example() {
 
  - Example:
 
-```
+```ts
 import toString from "object-as-array/toString";
 
 export default function example() {

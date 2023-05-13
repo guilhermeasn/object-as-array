@@ -14,7 +14,7 @@ Performs the specified action for each element in an object
 
  - Example:
 
-```
+```ts
 import objectAsArray from "object-as-array";
 
 export default function example() {
@@ -48,7 +48,7 @@ export default function example() {
 
  - Example:
 
-```
+```ts
 import forEach from "object-as-array/forEach";
 
 export default function example() {

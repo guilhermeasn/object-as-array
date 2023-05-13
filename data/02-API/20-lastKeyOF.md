@@ -14,7 +14,7 @@ Returns the key of the last occurrence of a value in an object or null
 
  - Example:
 
-```
+```ts
 import objectAsArray from "object-as-array";
 
 export default function example() {
@@ -44,7 +44,7 @@ export default function example() {
 
  - Example:
 
-```
+```ts
 import lastKeyOf from "object-as-array/lastKeyOf";
 
 export default function example() {

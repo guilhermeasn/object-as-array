@@ -14,7 +14,7 @@ Returns only the elements of the object that satisfy the test function
 
  - Example:
 
-```
+```ts
 import objectAsArray from "object-as-array";
 
 export default function example() {
@@ -44,7 +44,7 @@ export default function example() {
 
  - Example:
 
-```
+```ts
 import filter from "object-as-array/filter";
 
 export default function example() {

@@ -14,7 +14,7 @@ Combines two objects. This method returns a new object without modifying any exi
 
  - Example:
 
-```
+```ts
 import objectAsArray from "object-as-array";
 
 export default function example() {
@@ -44,7 +44,7 @@ export default function example() {
 
  - Example:
 
-```
+```ts
 import concat from "object-as-array/concat";
 
 export default function example() {
