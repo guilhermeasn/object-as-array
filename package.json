@@ -1,6 +1,6 @@
 {
   "name": "object-as-array",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Manipulate a javascript object with some of the most used functions in arrays",
   "main": "index.js",
   "types": "index.d.ts",
