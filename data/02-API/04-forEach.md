@@ -14,6 +14,11 @@ Performs the specified action for each element in an object
 (handler: (value: O[keyof O], key: keyof O) => void) => void
 ```
 
+<!-- |Name|Type|Description|
+|-|-|-|
+|@param handler|(value, key) => void|Function to be performed on each element
+|@returns|void|No return -->
+
  - Example:
 
 ```ts
@@ -49,6 +54,12 @@ export default function example() {
 ```ts
 <O extends object>(object: O, handler: (value: O[keyof O], key: keyof O) => void) => void
 ```
+
+<!-- |Name|Type|Description|
+|-|-|-|
+|@param object|object|Target object|
+|@param handler|(value, key) => void|Function to be performed on each element
+|@returns|void|No return -->
 
  - Example:
 

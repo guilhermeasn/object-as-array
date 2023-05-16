@@ -6,7 +6,7 @@ sidebar_position: 24
 
 Number of elements in the original object
 
-<h4>Functional programming</h4>
+<h4>Functional programming only</h4>
 
  - Typing:
 

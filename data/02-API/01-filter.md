@@ -14,6 +14,11 @@ Returns only the elements of the object that satisfy the test function
 (handler: (value: O[keyof O], key: keyof O) => boolean) => Partial<O>
 ```
 
+<!-- |Name|Type|Description|
+|-|-|-|
+|@param handler|(value, key) => boolean|Test function|
+|@returns|object|Elements that will pass the test| -->
+
  - Example:
 
 ```ts
@@ -45,6 +50,12 @@ export default function example() {
 ```ts
 <O extends object>(object: O, handler: (value: O[keyof O], key: keyof O) => boolean) => Partial<O>
 ```
+
+<!-- |Name|Type|Description|
+|-|-|-|
+|@param object|object|Target object|
+|@param handler|(value, key) => boolean|Test function|
+|@returns|object|Elements that will pass the test| -->
 
  - Example:
 

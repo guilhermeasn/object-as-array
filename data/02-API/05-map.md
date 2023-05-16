@@ -4,19 +4,24 @@ sidebar_position: 5
 
 # Map
 
+Calls a defined callback function on each element of an object, and returns an array that contains the results.
+
  - Typing:
 
 ```ts
 <R>(handler: (value: O[keyof O], key: keyof O) => R) => R[]
 ```
 
- - Example:
+<!-- |Name|Type|Description|
+|-|-|-|
+|@param handler|(value, key) => any|Callback function|
+|@returns|Array|Resulting array| -->
 
-Calls a defined callback function on each element of an object, and returns an array that contains the results.
+ - Example:
 
 <h4>Functional programming</h4>
 
-```
+```ts
 import objectAsArray from "object-as-array";
 
 export default function example() {
@@ -45,6 +50,12 @@ export default function example() {
 ```ts
 <O extends object, R>(object: O, handler: (value: O[keyof O], key: keyof O) => R) => R[]
 ```
+
+<!-- |Name|Type|Description|
+|-|-|-|
+|@param object|object|Target object|
+|@param handler|(value, key) => any|Callback function|
+|@returns|Array|Resulting array| -->
 
  - Example:
 

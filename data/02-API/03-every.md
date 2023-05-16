@@ -14,6 +14,11 @@ Determines whether all the members of an object satisfy the specified test
 (handler: (value: O[keyof O], key: keyof O) => boolean) => boolean
 ```
 
+<!-- |Name|Type|Description|
+|-|-|-|
+|@param handler|(value, key) => boolean|Test function
+|@returns|boolean|Boolean result -->
+
  - Example:
 
 ```ts
@@ -45,6 +50,12 @@ export default function example() {
 ```ts
 <O extends object>(object: O, handler: (value: O[keyof O], key: keyof O) => boolean) => boolean
 ```
+
+<!-- |Name|Type|Description|
+|-|-|-|
+|@param object|object|Target object|
+|@param handler|(value, key) => boolean|Test function
+|@returns|boolean|Boolean result -->
 
  - Example:
 
