@@ -21,7 +21,7 @@ import objectAsArray from "object-as-array";
 
 export default async function example() {
 
-    const pairs : boolean[] = [];
+    const pairs = [];
 
     const sleep = () => {
         return new Promise(resolve => {
@@ -68,7 +68,7 @@ import forEachAsync from "object-as-array/forEachAsync";
 
 export default async function example() {
 
-    const pairs : boolean[] = [];
+    const pairs = [];
 
     const sleep = () => {
         return new Promise(resolve => {
