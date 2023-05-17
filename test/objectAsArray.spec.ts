@@ -57,6 +57,27 @@ describe('ObjectAsArray Test', () => {
         })
     });
 
+    test('Async funcs', async () => {
+
+        const pairs : boolean[] = [];
+
+        const sleep = () : Promise<void> => {
+            return new Promise(resolve => {
+                setTimeout(() => resolve(), 35);
+            });
+        }
+
+        const isPair = async (n : number) : Promise<boolean> => {
+            await sleep();
+            return n % 2 === 0;
+        }
+
+        await functionalRoman.forEachAsync(async v => { pairs.push(await isPair(v)) });
+
+        expect(pairs).toStrictEqual([ false, false, true, true, true, true, true ]);
+
+    });
+
     test('Miscelaneous test', () => {
 
         expect(functionalRoman.every(v => v > 0)).toBeTruthy();

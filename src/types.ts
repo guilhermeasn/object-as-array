@@ -2,6 +2,7 @@ import type { EveryHandler } from "./every"
 import type { FilterHandler } from "./filter"
 import type { FindHandler } from "./find"
 import type { ForEachHandler } from "./forEach"
+import type { ForEachAsyncHandler } from "./forEachAsync"
 import type { MapHandler } from "./map"
 import type { ReduceHandler } from "./reduce"
 import type { SomeHandler } from "./some"
@@ -67,6 +68,12 @@ export type ObjectAsArray<O extends object> = {
      * @param handler Function to be performed on each element
      */
     forEach : (handler : Expose<ForEachHandler<O>>) => void
+
+    /**
+     * Performs the specified async action for each element in an object
+     * @param handler Async function to be performed on each element
+     */
+    forEachAsync: (handler : Expose<ForEachAsyncHandler<O>>) => Promise<void>
 
     /**
      * Calls a defined callback function on each element of an object,

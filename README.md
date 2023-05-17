@@ -30,6 +30,7 @@ Available resources:
  - **Some**: Determines whether one of an object's members satisfies the specified test
  - **Every**: Determines whether all the members of an object satisfy the specified test
  - **ForEach**: Performs the specified action for each element in an object
+ - **ForEachAsync**: Performs the specified async action for each element in an object
  - **Map**: Calls a defined callback function on each element of an object, and returns an array that contains the results.
  - **KeysMap**: Calls a defined callback function on each element of an object, and returns an object with the same keys that contains the results.
  - **Sort**: Sorts the position of the object's elements
