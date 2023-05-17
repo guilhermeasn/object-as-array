@@ -1,17 +1,17 @@
 ---
-sidebar_position: 18
+sidebar_position: 13
 ---
 
-# FindLast
+# Concat
 
-Returns the last element that satisfies the test function or returns null
-
+Combines two objects. This method returns a new object without modifying any existing object
+   
 <h4>Functional programming</h4>
 
  - Typing:
 
 ```ts
-<T extends keyof ObjectInfo<O>>(dataType: T, handler: (value: O[keyof O], key: keyof O) => boolean) => ObjectInfo<O>[T] | null
+<A extends object>(assign: A) => O & A
 ```
 
  - Example:
@@ -31,9 +31,9 @@ export default function example() {
         M : 1000
     });
 
-    return obj.findLast('entrie', v => v < 1000);
+    return obj.concat({II : 2, III: 3, IV: 4});
 
-    // Result: ['D', 500]
+    // Result: {I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000, II: 2, III: 3, IV: 4}
 
 }
 ```
@@ -43,13 +43,13 @@ export default function example() {
  - Typing:
 
 ```ts
-<O extends object, T extends keyof ObjectInfo<O>>(object: O, dataType: T, handler: (value: O[keyof O], key: keyof O) => boolean) => ObjectInfo<O>[T] | null
+<O extends object, A extends object>(object: O, assign: A) => O & A
 ```
 
  - Example:
 
 ```ts
-import findLast from "object-as-array/findLast";
+import concat from "object-as-array/concat";
 
 export default function example() {
     
@@ -63,9 +63,9 @@ export default function example() {
         M : 1000
     };
 
-    return findLast(obj, 'entrie', v => v < 1000);
+    return concat(obj, {II : 2, III: 3, IV: 4});
 
-    // Result: ['D', 500]
+    // Result: {I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000, II: 2, III: 3, IV: 4}
 
 }
 ```

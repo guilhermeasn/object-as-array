@@ -1,17 +1,17 @@
 ---
-sidebar_position: 14
+sidebar_position: 21
 ---
 
-# ToString
+# LastKeyOf
 
-Turn object into a string
+Returns the key of the last occurrence of a value in an object or null
 
 <h4>Functional programming</h4>
 
  - Typing:
 
 ```ts
-(expand?: boolean | number) => string
+(value: O[keyof O]) => keyof O | null
 ```
 
  - Example:
@@ -31,9 +31,9 @@ export default function example() {
         M : 1000
     });
 
-    return obj.toString();
+    return obj.lastKeyOf(300);
 
-    // Result: '{"I":1,"V":5,"X":10,"L":50,"C":100,"D":500,"M":1000}'
+    // Result: null
 
 }
 ```
@@ -43,13 +43,13 @@ export default function example() {
  - Typing:
 
 ```ts
-<O extends object>(object: O, expand?: boolean | number) => string
+<O extends object>(object: O, value: O[keyof O]) => keyof O | null
 ```
 
  - Example:
 
 ```ts
-import toString from "object-as-array/toString";
+import lastKeyOf from "object-as-array/lastKeyOf";
 
 export default function example() {
     
@@ -63,9 +63,9 @@ export default function example() {
         M : 1000
     };
 
-    return toString(obj);
+    return lastKeyOf(obj, 300);
 
-    // Result: '{"I":1,"V":5,"X":10,"L":50,"C":100,"D":500,"M":1000}'
+    // Result: null
 
 }
 ```

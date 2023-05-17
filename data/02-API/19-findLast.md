@@ -1,17 +1,17 @@
 ---
-sidebar_position: 15
+sidebar_position: 19
 ---
 
-# ToArray
+# FindLast
 
-Turn object into an array
+Returns the last element that satisfies the test function or returns null
 
 <h4>Functional programming</h4>
 
  - Typing:
 
 ```ts
-<T extends keyof ObjectData<O>>(dataType: T) => ObjectData<O>[T]
+<T extends keyof ObjectInfo<O>>(dataType: T, handler: (value: O[keyof O], key: keyof O) => boolean) => ObjectInfo<O>[T] | null
 ```
 
  - Example:
@@ -31,9 +31,9 @@ export default function example() {
         M : 1000
     });
 
-    return obj.toArray('key');
+    return obj.findLast('entrie', v => v < 1000);
 
-    // Result: ['I', 'V', 'X', 'L', 'C', 'D', 'M']
+    // Result: ['D', 500]
 
 }
 ```
@@ -43,13 +43,13 @@ export default function example() {
  - Typing:
 
 ```ts
-<O extends object, T extends keyof ObjectData<O>>(object: O, dataType: T) => ObjectData<O>[T]
+<O extends object, T extends keyof ObjectInfo<O>>(object: O, dataType: T, handler: (value: O[keyof O], key: keyof O) => boolean) => ObjectInfo<O>[T] | null
 ```
 
  - Example:
 
 ```ts
-import toArray from "object-as-array/toArray";
+import findLast from "object-as-array/findLast";
 
 export default function example() {
     
@@ -63,9 +63,9 @@ export default function example() {
         M : 1000
     };
 
-    return toArray(obj, 'key');
+    return findLast(obj, 'entrie', v => v < 1000);
 
-    // Result: ['I', 'V', 'X', 'L', 'C', 'D', 'M']
+    // Result: ['D', 500]
 
 }
 ```

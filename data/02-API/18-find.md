@@ -1,17 +1,17 @@
 ---
-sidebar_position: 19
+sidebar_position: 18
 ---
 
-# KeyOf
+# Find
 
-Returns the key of the first occurrence of a value in an object or null
+Returns the first element that satisfies the test function or returns null
 
 <h4>Functional programming</h4>
 
  - Typing:
 
 ```ts
-(value: O[keyof O]) => keyof O | null
+<T extends keyof ObjectInfo<O>>(dataType: T, handler: (value: O[keyof O], key: keyof O) => boolean) => ObjectInfo<O>[T] | null
 ```
 
  - Example:
@@ -31,9 +31,9 @@ export default function example() {
         M : 1000
     });
 
-    return obj.keyOf(100);
+    return obj.find('key', v => v > 10);
 
-    // Result: 'C'
+    // Result: 'L'
 
 }
 ```
@@ -43,13 +43,13 @@ export default function example() {
  - Typing:
 
 ```ts
-<O extends object>(object: O, value: O[keyof O]) => keyof O | null
+<O extends object, T extends keyof ObjectInfo<O>>(object: O, dataType: T, handler: (value: O[keyof O], key: keyof O) => boolean) => ObjectInfo<O>[T] | null
 ```
 
  - Example:
 
 ```ts
-import keyOf from "object-as-array/keyOf";
+import find from "object-as-array/find";
 
 export default function example() {
     
@@ -63,9 +63,9 @@ export default function example() {
         M : 1000
     };
 
-    return keyOf(obj, 100);
+    return find(obj, 'key', v => v > 10);
 
-    // Result: 'C'
+    // Result: 'L'
 
 }
 ```

@@ -1,17 +1,17 @@
 ---
-sidebar_position: 23
+sidebar_position: 25
 ---
 
-# Push
+# Length
 
-Adds or modifies the original object
-    
+Number of elements in the original object
+
 <h4>Functional programming only</h4>
 
  - Typing:
 
 ```ts
-(assign: Partial<O>) => number
+number
 ```
 
  - Example:
@@ -31,9 +31,9 @@ export default function example() {
         M : 1000
     });
 
-    return obj.push({II: 2, III: 3, IV: 4});
+    return obj.length;
 
-    // Result: 10 (object changed)
+    // Result: 7
 
 }
 ```

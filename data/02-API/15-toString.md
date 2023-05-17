@@ -1,17 +1,17 @@
 ---
-sidebar_position: 11
+sidebar_position: 15
 ---
 
-# Omit
+# ToString
 
-Returns the elements that did not have their keys specified
-    
+Turn object into a string
+
 <h4>Functional programming</h4>
 
  - Typing:
 
 ```ts
-<K extends (keyof O)[]>(...keys: K) => Omit<O, ArrayValuesType<K>>
+(expand?: boolean | number) => string
 ```
 
  - Example:
@@ -31,9 +31,9 @@ export default function example() {
         M : 1000
     });
 
-    return obj.omit('I', 'V', 'L', 'D');
+    return obj.toString();
 
-    // Result: {X: 10, C: 100, M: 1000}
+    // Result: '{"I":1,"V":5,"X":10,"L":50,"C":100,"D":500,"M":1000}'
 
 }
 ```
@@ -43,13 +43,13 @@ export default function example() {
  - Typing:
 
 ```ts
-<O extends object, K extends (keyof O)[]>(object: O, ...keys: K) => Omit<O, ArrayValuesType<K>>
+<O extends object>(object: O, expand?: boolean | number) => string
 ```
 
  - Example:
 
 ```ts
-import omit from "object-as-array/omit";
+import toString from "object-as-array/toString";
 
 export default function example() {
     
@@ -63,9 +63,9 @@ export default function example() {
         M : 1000
     };
 
-    return omit(obj, 'I', 'V', 'L', 'D');
+    return toString(obj);
 
-    // Result: {X: 10, C: 100, M: 1000}
+    // Result: '{"I":1,"V":5,"X":10,"L":50,"C":100,"D":500,"M":1000}'
 
 }
 ```

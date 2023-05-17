@@ -2,16 +2,16 @@
 sidebar_position: 12
 ---
 
-# Concat
+# Omit
 
-Combines two objects. This method returns a new object without modifying any existing object
-   
+Returns the elements that did not have their keys specified
+    
 <h4>Functional programming</h4>
 
  - Typing:
 
 ```ts
-<A extends object>(assign: A) => O & A
+<K extends (keyof O)[]>(...keys: K) => Omit<O, ArrayValuesType<K>>
 ```
 
  - Example:
@@ -31,9 +31,9 @@ export default function example() {
         M : 1000
     });
 
-    return obj.concat({II : 2, III: 3, IV: 4});
+    return obj.omit('I', 'V', 'L', 'D');
 
-    // Result: {I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000, II: 2, III: 3, IV: 4}
+    // Result: {X: 10, C: 100, M: 1000}
 
 }
 ```
@@ -43,13 +43,13 @@ export default function example() {
  - Typing:
 
 ```ts
-<O extends object, A extends object>(object: O, assign: A) => O & A
+<O extends object, K extends (keyof O)[]>(object: O, ...keys: K) => Omit<O, ArrayValuesType<K>>
 ```
 
  - Example:
 
 ```ts
-import concat from "object-as-array/concat";
+import omit from "object-as-array/omit";
 
 export default function example() {
     
@@ -63,9 +63,9 @@ export default function example() {
         M : 1000
     };
 
-    return concat(obj, {II : 2, III: 3, IV: 4});
+    return omit(obj, 'I', 'V', 'L', 'D');
 
-    // Result: {I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000, II: 2, III: 3, IV: 4}
+    // Result: {X: 10, C: 100, M: 1000}
 
 }
 ```

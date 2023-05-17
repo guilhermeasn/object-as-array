@@ -1,17 +1,17 @@
 ---
-sidebar_position: 20
+sidebar_position: 22
 ---
 
-# LastKeyOf
+# ValueOf
 
-Returns the key of the last occurrence of a value in an object or null
-
+Returns the value of an element of an object
+     
 <h4>Functional programming</h4>
 
  - Typing:
 
 ```ts
-(value: O[keyof O]) => keyof O | null
+<K extends keyof O>(key: K) => O[K]
 ```
 
  - Example:
@@ -31,9 +31,9 @@ export default function example() {
         M : 1000
     });
 
-    return obj.lastKeyOf(300);
+    return obj.valueOf('X');
 
-    // Result: null
+    // Result: 10
 
 }
 ```
@@ -43,13 +43,13 @@ export default function example() {
  - Typing:
 
 ```ts
-<O extends object>(object: O, value: O[keyof O]) => keyof O | null
+<O extends object, K extends keyof O>(object: O, key: K) => O[K]
 ```
 
  - Example:
 
 ```ts
-import lastKeyOf from "object-as-array/lastKeyOf";
+import valueOf from "object-as-array/valueOf";
 
 export default function example() {
     
@@ -63,9 +63,9 @@ export default function example() {
         M : 1000
     };
 
-    return lastKeyOf(obj, 300);
+    return valueOf(obj, 'X');
 
-    // Result: null
+    // Result: 10
 
 }
 ```

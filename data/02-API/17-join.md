@@ -2,16 +2,16 @@
 sidebar_position: 17
 ---
 
-# Find
+# Join
 
-Returns the first element that satisfies the test function or returns null
+Joins all elements of an object separated by the specified separator string
 
 <h4>Functional programming</h4>
 
  - Typing:
 
 ```ts
-<T extends keyof ObjectInfo<O>>(dataType: T, handler: (value: O[keyof O], key: keyof O) => boolean) => ObjectInfo<O>[T] | null
+<T extends keyof ObjectData<O>>(dataType: T, separator?: (T extends "entries" ? string | [string, string] : string) | undefined) => string
 ```
 
  - Example:
@@ -31,9 +31,9 @@ export default function example() {
         M : 1000
     });
 
-    return obj.find('key', v => v > 10);
+    return obj.join('value', ', ');
 
-    // Result: 'L'
+    // Result: '1, 5, 10, 50, 100, 500, 1000'
 
 }
 ```
@@ -43,13 +43,13 @@ export default function example() {
  - Typing:
 
 ```ts
-<O extends object, T extends keyof ObjectInfo<O>>(object: O, dataType: T, handler: (value: O[keyof O], key: keyof O) => boolean) => ObjectInfo<O>[T] | null
+<O extends object, T extends keyof ObjectData<O>>(object: O, dataType: T, separator?: (T extends "entries" ? string | [string, string] : string) | undefined) => string
 ```
 
  - Example:
 
 ```ts
-import find from "object-as-array/find";
+import join from "object-as-array/join";
 
 export default function example() {
     
@@ -63,9 +63,9 @@ export default function example() {
         M : 1000
     };
 
-    return find(obj, 'key', v => v > 10);
+    return join(obj, 'value', ', ');
 
-    // Result: 'L'
+    // Result: '1, 5, 10, 50, 100, 500, 1000'
 
 }
 ```

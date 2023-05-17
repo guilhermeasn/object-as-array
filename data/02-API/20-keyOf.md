@@ -1,17 +1,17 @@
 ---
-sidebar_position: 21
+sidebar_position: 20
 ---
 
-# ValueOf
+# KeyOf
 
-Returns the value of an element of an object
-     
+Returns the key of the first occurrence of a value in an object or null
+
 <h4>Functional programming</h4>
 
  - Typing:
 
 ```ts
-<K extends keyof O>(key: K) => O[K]
+(value: O[keyof O]) => keyof O | null
 ```
 
  - Example:
@@ -31,9 +31,9 @@ export default function example() {
         M : 1000
     });
 
-    return obj.valueOf('X');
+    return obj.keyOf(100);
 
-    // Result: 10
+    // Result: 'C'
 
 }
 ```
@@ -43,13 +43,13 @@ export default function example() {
  - Typing:
 
 ```ts
-<O extends object, K extends keyof O>(object: O, key: K) => O[K]
+<O extends object>(object: O, value: O[keyof O]) => keyof O | null
 ```
 
  - Example:
 
 ```ts
-import valueOf from "object-as-array/valueOf";
+import keyOf from "object-as-array/keyOf";
 
 export default function example() {
     
@@ -63,9 +63,9 @@ export default function example() {
         M : 1000
     };
 
-    return valueOf(obj, 'X');
+    return keyOf(obj, 100);
 
-    // Result: 10
+    // Result: 'C'
 
 }
 ```

@@ -1,17 +1,17 @@
 ---
-sidebar_position: 22
+sidebar_position: 24
 ---
 
-# Data
+# Push
 
-Original object elements
-     
+Adds or modifies the original object
+    
 <h4>Functional programming only</h4>
 
  - Typing:
 
 ```ts
-() => O
+(assign: Partial<O>) => number
 ```
 
  - Example:
@@ -31,9 +31,9 @@ export default function example() {
         M : 1000
     });
 
-    return obj.data();
+    return obj.push({II: 2, III: 3, IV: 4});
 
-    // Result: {I : 1, V : 5, X : 10, L : 50, C : 100, D : 500, M : 1000}
+    // Result: 10 (object changed)
 
 }
 ```

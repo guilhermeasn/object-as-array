@@ -2,16 +2,16 @@
 sidebar_position: 16
 ---
 
-# Join
+# ToArray
 
-Joins all elements of an object separated by the specified separator string
+Turn object into an array
 
 <h4>Functional programming</h4>
 
  - Typing:
 
 ```ts
-<T extends keyof ObjectData<O>>(dataType: T, separator?: (T extends "entries" ? string | [string, string] : string) | undefined) => string
+<T extends keyof ObjectData<O>>(dataType: T) => ObjectData<O>[T]
 ```
 
  - Example:
@@ -31,9 +31,9 @@ export default function example() {
         M : 1000
     });
 
-    return obj.join('value', ', ');
+    return obj.toArray('key');
 
-    // Result: '1, 5, 10, 50, 100, 500, 1000'
+    // Result: ['I', 'V', 'X', 'L', 'C', 'D', 'M']
 
 }
 ```
@@ -43,13 +43,13 @@ export default function example() {
  - Typing:
 
 ```ts
-<O extends object, T extends keyof ObjectData<O>>(object: O, dataType: T, separator?: (T extends "entries" ? string | [string, string] : string) | undefined) => string
+<O extends object, T extends keyof ObjectData<O>>(object: O, dataType: T) => ObjectData<O>[T]
 ```
 
  - Example:
 
 ```ts
-import join from "object-as-array/join";
+import toArray from "object-as-array/toArray";
 
 export default function example() {
     
@@ -63,9 +63,9 @@ export default function example() {
         M : 1000
     };
 
-    return join(obj, 'value', ', ');
+    return toArray(obj, 'key');
 
-    // Result: '1, 5, 10, 50, 100, 500, 1000'
+    // Result: ['I', 'V', 'X', 'L', 'C', 'D', 'M']
 
 }
 ```

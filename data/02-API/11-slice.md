@@ -1,17 +1,17 @@
 ---
-sidebar_position: 7
+sidebar_position: 11
 ---
 
-# Sort
+# Slice
 
-Sorts the position of the object's elements
+Returns a section of an object
 
 <h4>Functional programming</h4>
 
  - Typing:
 
 ```ts
-<T extends keyof ObjectInfo<O>>(dataType: T, handler: (a: ObjectInfo<O>[T], b: ObjectInfo<O>[T]) => number) => O
+<K extends (keyof O)[]>(...keys: K) => Pick<O, ArrayValuesType<K>>
 ```
 
  - Example:
@@ -31,9 +31,9 @@ export default function example() {
         M : 1000
     });
 
-    return obj.sort('key', (a, b) => a > b);
+    return obj.slice('V', 'L', 'D');
 
-    // Result: {C: 100, D: 500, I: 1, L: 50, M: 1000, V: 5, X: 10}
+    // Result: {V: 5, L: 50, D: 500}
 
 }
 ```
@@ -43,13 +43,13 @@ export default function example() {
  - Typing:
 
 ```ts
-<O extends object, T extends keyof ObjectInfo<O>>(object: O, dataType: T, handler: (a: ObjectInfo<O>[T], b: ObjectInfo<O>[T]) => number) => O
+<O extends object, K extends (keyof O)[]>(object: O, ...keys: K) => Pick<O, ArrayValuesType<K>>
 ```
 
  - Example:
 
 ```ts
-import sort from "object-as-array/sort";
+import slice from "object-as-array/slice";
 
 export default function example() {
     
@@ -63,9 +63,9 @@ export default function example() {
         M : 1000
     };
 
-    return sort(obj, 'key', (a, b) => a > b);
+    return slice(obj, 'V', 'L', 'D');
 
-    // Result: {C: 100, D: 500, I: 1, L: 50, M: 1000, V: 5, X: 10}
+    // Result: {V: 5, L: 50, D: 500}
 
 }
 ```

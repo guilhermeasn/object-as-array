@@ -1,17 +1,17 @@
 ---
-sidebar_position: 24
+sidebar_position: 23
 ---
 
-# Length
+# Data
 
-Number of elements in the original object
-
+Original object elements
+     
 <h4>Functional programming only</h4>
 
  - Typing:
 
 ```ts
-number
+() => O
 ```
 
  - Example:
@@ -31,9 +31,9 @@ export default function example() {
         M : 1000
     });
 
-    return obj.length;
+    return obj.data();
 
-    // Result: 7
+    // Result: {I : 1, V : 5, X : 10, L : 50, C : 100, D : 500, M : 1000}
 
 }
 ```

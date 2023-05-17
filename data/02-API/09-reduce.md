@@ -2,9 +2,9 @@
 sidebar_position: 9
 ---
 
-# ReduceRight
+# Reduce
 
-Calls the specified callback function for all the elements in an object reversed. The return value of the callback function is the accumulated result, and is provided as an argument in the next call to the callback function
+Calls the specified callback function for all the elements in an object. The return value of the callback function is the accumulated result, and is provided as an argument in the next call to the callback function
 
 <h4>Functional programming</h4>
 
@@ -31,9 +31,9 @@ export default function example() {
         M : 1000
     });
 
-    return obj.reduceRight((p, v) => p - v);
+    return obj.reduce((p, v) => p + v, 334);
 
-    // Result: 334
+    // Result: 2000
 
 }
 ```
@@ -49,7 +49,7 @@ export default function example() {
  - Example:
 
 ```ts
-import reduceRight from "object-as-array/reduceRight";
+import reduce from "object-as-array/reduce";
 
 export default function example() {
     
@@ -63,9 +63,9 @@ export default function example() {
         M : 1000
     };
 
-    return reduceRight(obj, (p, v) => p - v);
+    return reduce(obj, (p, v) => p + v, 334);
 
-    // Result: 334
+    // Result: 2000
 
 }
 ```

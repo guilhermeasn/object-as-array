@@ -1,17 +1,17 @@
 ---
-sidebar_position: 13
+sidebar_position: 8
 ---
 
-# Reverse
+# Sort
 
-Reverses the position of object elements
+Sorts the position of the object's elements
 
 <h4>Functional programming</h4>
 
  - Typing:
 
 ```ts
-() => O
+<T extends keyof ObjectInfo<O>>(dataType: T, handler: (a: ObjectInfo<O>[T], b: ObjectInfo<O>[T]) => number) => O
 ```
 
  - Example:
@@ -31,9 +31,9 @@ export default function example() {
         M : 1000
     });
 
-    return obj.reverse();
+    return obj.sort('key', (a, b) => a > b);
 
-    // Result: {M: 1000, D: 500, C: 100, L: 50, X: 10, V: 5, I: 1}
+    // Result: {C: 100, D: 500, I: 1, L: 50, M: 1000, V: 5, X: 10}
 
 }
 ```
@@ -43,13 +43,13 @@ export default function example() {
  - Typing:
 
 ```ts
-<O extends object>(object: O) => O
+<O extends object, T extends keyof ObjectInfo<O>>(object: O, dataType: T, handler: (a: ObjectInfo<O>[T], b: ObjectInfo<O>[T]) => number) => O
 ```
 
  - Example:
 
 ```ts
-import reverse from "object-as-array/reverse";
+import sort from "object-as-array/sort";
 
 export default function example() {
     
@@ -63,9 +63,9 @@ export default function example() {
         M : 1000
     };
 
-    return reverse(obj);
+    return sort(obj, 'key', (a, b) => a > b);
 
-    // Result: {M: 1000, D: 500, C: 100, L: 50, X: 10, V: 5, I: 1}
+    // Result: {C: 100, D: 500, I: 1, L: 50, M: 1000, V: 5, X: 10}
 
 }
 ```

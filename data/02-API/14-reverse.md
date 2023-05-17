@@ -1,17 +1,17 @@
 ---
-sidebar_position: 10
+sidebar_position: 14
 ---
 
-# Slice
+# Reverse
 
-Returns a section of an object
+Reverses the position of object elements
 
 <h4>Functional programming</h4>
 
  - Typing:
 
 ```ts
-<K extends (keyof O)[]>(...keys: K) => Pick<O, ArrayValuesType<K>>
+() => O
 ```
 
  - Example:
@@ -31,9 +31,9 @@ export default function example() {
         M : 1000
     });
 
-    return obj.slice('V', 'L', 'D');
+    return obj.reverse();
 
-    // Result: {V: 5, L: 50, D: 500}
+    // Result: {M: 1000, D: 500, C: 100, L: 50, X: 10, V: 5, I: 1}
 
 }
 ```
@@ -43,13 +43,13 @@ export default function example() {
  - Typing:
 
 ```ts
-<O extends object, K extends (keyof O)[]>(object: O, ...keys: K) => Pick<O, ArrayValuesType<K>>
+<O extends object>(object: O) => O
 ```
 
  - Example:
 
 ```ts
-import slice from "object-as-array/slice";
+import reverse from "object-as-array/reverse";
 
 export default function example() {
     
@@ -63,9 +63,9 @@ export default function example() {
         M : 1000
     };
 
-    return slice(obj, 'V', 'L', 'D');
+    return reverse(obj);
 
-    // Result: {V: 5, L: 50, D: 500}
+    // Result: {M: 1000, D: 500, C: 100, L: 50, X: 10, V: 5, I: 1}
 
 }
 ```
