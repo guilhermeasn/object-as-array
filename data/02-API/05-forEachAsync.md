@@ -11,7 +11,7 @@ Performs the specified async action for each element in an object
  - Typing:
 
 ```ts
-(handler: (value: O[keyof O], key: keyof O) => void) => void
+(handler: (value: O[keyof O], key: keyof O) => Promise<void>) => Promise<void>
 ```
 
  - Example:
@@ -29,7 +29,7 @@ export default async function example() {
         });
     }
 
-    const isPair = async (n) => {
+    const isPair = async n => {
         await sleep();
         return n % 2 === 0;
     }
@@ -58,7 +58,7 @@ export default async function example() {
  - Typing:
 
 ```ts
-<O extends object>(object: O, handler: (value: O[keyof O], key: keyof O) => void) => void
+<O extends object>(object: O, handler: (value: O[keyof O], key: keyof O) => Promise<void>) => Promise<void>
 ```
 
  - Example:
@@ -76,7 +76,7 @@ export default async function example() {
         });
     }
 
-    const isPair = async (n) => {
+    const isPair = async n => {
         await sleep();
         return n % 2 === 0;
     }
