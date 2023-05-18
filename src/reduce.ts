@@ -12,7 +12,7 @@ export type ReduceHandler<O extends object, R> = (previousValue: R, currentValue
  * @param initial Initial value to be a joined (optional)
  * @returns Result of the reduction
  */
-export default function reduce<O extends object, R = O[keyof O]>(object : O, handler : ReduceHandler<O, R>, initial ?: R) : R {
+export function reduce<O extends object, R = O[keyof O]>(object : O, handler : ReduceHandler<O, R>, initial ?: R) : R {
 
     let r : R | undefined = initial;
 
@@ -24,3 +24,5 @@ export default function reduce<O extends object, R = O[keyof O]>(object : O, han
     return <R>r;
 
 }
+
+export default reduce;

@@ -9,7 +9,7 @@ export type FilterHandler<O extends object> = (value : O[keyof O], key : keyof O
  * @param handler Test function
  * @returns Elements that will pass the test
  */
-export default function filter<O extends object>(object : O, handler : FilterHandler<O>) : Partial<O> {
+export function filter<O extends object>(object : O, handler : FilterHandler<O>) : Partial<O> {
     
     const r : Partial<O> = {};
 
@@ -22,3 +22,5 @@ export default function filter<O extends object>(object : O, handler : FilterHan
     return r;
 
 }
+
+export default filter;

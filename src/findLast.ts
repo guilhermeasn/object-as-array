@@ -11,7 +11,9 @@ import reverse from "./reverse";
  * @param handler Test function
  * @returns Last element that passed the test or null
  */
-export default function findLast<O extends object, T extends keyof ObjectInfo<O>>(object : O, dataType : T, handler : FindHandler<O>) : ObjectInfo<O>[T] | null {
+export function findLast<O extends object, T extends keyof ObjectInfo<O>>(object : O, dataType : T, handler : FindHandler<O>) : ObjectInfo<O>[T] | null {
     object = reverse(object);
     return find(object, dataType, handler);
 }
+
+export default findLast;

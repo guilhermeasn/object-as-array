@@ -6,6 +6,7 @@ import filter from "./filter";
 import find from "./find";
 import findLast from "./findLast";
 import forEach from "./forEach";
+import forEachAsync from "./forEachAsync";
 import join from "./join";
 import keyOf from "./keyOf";
 import keysMap from "./keysMap";
@@ -21,14 +22,13 @@ import sort from "./sort";
 import toArray from "./toArray";
 import toString from "./toString";
 import valueOf from "./valueOf";
-import forEachAsync from "./forEachAsync";
 
 /**
  * Create a functional object
  * @param object Original object
  * @returns Functional object methods
  */
-export default function objectAsArray<O extends object>(object : O) : ObjectAsArray<O> {
+export function objectAsArray<O extends object>(object : O) : ObjectAsArray<O> {
 
     let length: number = Object.keys(object).length;
 
@@ -67,3 +67,5 @@ export default function objectAsArray<O extends object>(object : O) : ObjectAsAr
     }
 
 }
+
+export default objectAsArray;

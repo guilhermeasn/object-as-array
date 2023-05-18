@@ -8,8 +8,10 @@ export type ForEachAsyncHandler<O extends object> = (value : O[keyof O], key : k
  * @param object Object to be traversed
  * @param handler Async function to be performed on each element
  */
-export default async function forEachAsync<O extends object>(object : O, handler : ForEachAsyncHandler<O>) : Promise<void> {
+export async function forEachAsync<O extends object>(object : O, handler : ForEachAsyncHandler<O>) : Promise<void> {
     for(let key in object) {
         await handler(object[key], key);
     }
 }
+
+export default forEachAsync;

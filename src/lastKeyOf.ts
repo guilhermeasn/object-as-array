@@ -7,7 +7,9 @@ import reverse from "./reverse";
  * @param value Value to be sought
  * @returns Key of element found or null
  */
-export default function lastKeyOf<O extends object>(object : O, value : O[keyof O]) : keyof O | null {
+export function lastKeyOf<O extends object>(object : O, value : O[keyof O]) : keyof O | null {
     object = reverse(object);
     return keyOf(object, value);
 }
+
+export default lastKeyOf;

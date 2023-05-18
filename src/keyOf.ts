@@ -4,7 +4,7 @@
  * @param value Value to be sought
  * @returns Key of element found or null
  */
-export default function keyOf<O extends object>(object : O, value : O[keyof O]) : keyof O | null {
+export function keyOf<O extends object>(object : O, value : O[keyof O]) : keyof O | null {
     for(let key in object) {
         if(object[key] === value) {
             return key;
@@ -12,3 +12,5 @@ export default function keyOf<O extends object>(object : O, value : O[keyof O]) 
     }
     return null;
 }
+
+export default keyOf;

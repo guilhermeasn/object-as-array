@@ -7,7 +7,7 @@ import type { MapHandler } from "./map";
  * @param handler Callback function
  * @returns Resulting object
  */
-export default function keysMap<O extends object, R>(object : O, handler : MapHandler<O, R>) : Record<keyof O, R> {
+export function keysMap<O extends object, R>(object : O, handler : MapHandler<O, R>) : Record<keyof O, R> {
 
     const r = {} as Record<keyof O, R>;
 
@@ -18,3 +18,5 @@ export default function keysMap<O extends object, R>(object : O, handler : MapHa
     return r;
 
 }
+
+export default keysMap;

@@ -9,7 +9,7 @@ export type SomeHandler<O extends object> = (value : O[keyof O], key : keyof O) 
  * @param handler Test function
  * @returns Boolean result
  */
-export default function some<O extends object>(object : O, handler : SomeHandler<O>) : boolean {
+export function some<O extends object>(object : O, handler : SomeHandler<O>) : boolean {
     for(let key in object) {
         if(handler(object[key], key)) {
             return true;
@@ -17,3 +17,5 @@ export default function some<O extends object>(object : O, handler : SomeHandler
     }
     return false;
 }
+
+export default some;

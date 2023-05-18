@@ -4,6 +4,8 @@
  * @param key Element key
  * @returns Element value
  */
-export default function valueOf<O extends object, K extends keyof O>(object : O, key : K) : O[K] {
+export function valueOf<O extends object, K extends keyof O>(object : O, key : K) : O[K] {
     return object?.[key];
 }
+
+export default valueOf;

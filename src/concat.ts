@@ -5,9 +5,11 @@
  * @param assign Object to be combined
  * @returns Composed object
  */
-export default function concat<O extends object, A extends object>(object : O, assign : A) : O & A {
+export function concat<O extends object, A extends object>(object : O, assign : A) : O & A {
     return {
         ...object,
         ...assign
     };
 }
+
+export default concat;

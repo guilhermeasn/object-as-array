@@ -12,7 +12,7 @@ export type FindHandler<O extends object> = (value : O[keyof O], key : keyof O) 
  * @param handler Test function
  * @returns First element that passed the test or null
  */
-export default function find<O extends object, T extends keyof ObjectInfo<O>>(object : O, dataType : T, handler : FindHandler<O>) : ObjectInfo<O>[T] | null {
+export function find<O extends object, T extends keyof ObjectInfo<O>>(object : O, dataType : T, handler : FindHandler<O>) : ObjectInfo<O>[T] | null {
     for(let key in object) {
         if(handler(object[key], key)) {
             return (
@@ -24,3 +24,5 @@ export default function find<O extends object, T extends keyof ObjectInfo<O>>(ob
     }
     return null;
 }
+
+export default find;
