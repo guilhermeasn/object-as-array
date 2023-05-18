@@ -1,4 +1,4 @@
-import type { ArrayValuesType } from "./types";
+import type { ArrayValuesType } from "./index";
 
 /**
  * Returns a section of an object

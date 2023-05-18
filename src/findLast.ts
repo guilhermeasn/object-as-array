@@ -1,5 +1,5 @@
 import type { FindHandler } from "./find";
-import type { ObjectInfo } from "./types";
+import type { ObjectInfo } from "./index";
 
 import find from "./find";
 import reverse from "./reverse";

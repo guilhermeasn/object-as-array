@@ -1,4 +1,4 @@
-import type { ArrayValuesType } from "./types";
+import type { ArrayValuesType } from "./index";
 
 /**
  * Returns the elements that did not have their keys specified
