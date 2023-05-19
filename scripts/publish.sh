@@ -8,5 +8,6 @@ if (yarn test); then
 else
 
     echo 'Build aborted because tests failed.'
+    exit 1;
 
 fi

@@ -10,5 +10,6 @@ if($LASTEXITCODE -eq 0) {
 } else {
 
     Write-Output 'Build aborted because tests failed.'
+    exit 1;
 
 }
