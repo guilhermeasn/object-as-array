@@ -6,10 +6,10 @@
   "types": "index.d.ts",
   "scripts": {
     "test": "jest",
-    "build:sh": "sh ./scripts/build.sh",
-    "build:ps": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./scripts/build.ps1",
-    "publish:sh": "sh ./scripts/publish.sh",
-    "publish:ps": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./scripts/publish.ps1"
+    "build:sh": "sh ./bin/build.sh",
+    "build:ps": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./bin/build.ps1",
+    "publish:sh": "sh ./bin/publish.sh",
+    "publish:ps": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./bin/publish.ps1"
   },
   "repository": {
     "type": "git",
