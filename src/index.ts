@@ -180,7 +180,7 @@ export type ObjectAsArray<O extends object> = {
      * @param separator String that joins the data (optional)
      * @returns Resulting string
      */
-    join : <T extends keyof ObjectData<O>>(dataType : T, separator ?: T extends 'entries' ? [string, string] | string : string) => string
+    join : <T extends keyof ObjectData<O>>(dataType : T, separator ?: T extends 'entrie' ? [string, string] | string : string) => string
 
     /**
      * Returns the first element that satisfies the test function or returns null
