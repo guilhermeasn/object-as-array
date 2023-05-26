@@ -172,7 +172,7 @@ export type ObjectAsArray<O extends object> = {
      * @param dataType Data of the object to be used: key, value or entrie
      * @returns Resulting array
      */
-    toArray : <T extends keyof ObjectData<O>>(dataType : T) => ObjectData<O>[T]
+    toArray : <T extends keyof ObjectData<O>>(dataType : T) => Expose<ObjectData<O>>[T]
 
     /**
      * Joins all elements of an object separated by the specified separator string
@@ -188,7 +188,7 @@ export type ObjectAsArray<O extends object> = {
      * @param handler Test function
      * @returns First element that passed the test or null
      */
-    find : <T extends keyof ObjectInfo<O>>(dataType : T, handler : Expose<FindHandler<O>>) => ObjectInfo<O>[T] | null
+    find : <T extends keyof ObjectInfo<O>>(dataType : T, handler : Expose<FindHandler<O>>) => Expose<ObjectInfo<O>>[T] | null
 
     /**
      * Returns the last element that satisfies the test function or returns null
@@ -196,7 +196,7 @@ export type ObjectAsArray<O extends object> = {
      * @param handler Test function
      * @returns Last element that passed the test or null
      */
-    findLast : <T extends keyof ObjectInfo<O>>(dataType : T, handler : Expose<FindHandler<O>>) => ObjectInfo<O>[T] | null
+    findLast : <T extends keyof ObjectInfo<O>>(dataType : T, handler : Expose<FindHandler<O>>) => Expose<ObjectInfo<O>>[T] | null
 
     /**
      * Returns the key of the first occurrence of a value in an object or null
