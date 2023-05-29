@@ -44,9 +44,7 @@ export type ObjectInfo<O extends object> = {
  * Dataset of an object
  */
 export type ObjectData<O extends object> = {
-    key    : Array<ObjectInfo<O>['key']>
-    value  : Array<ObjectInfo<O>['value']>
-    entrie : Array<ObjectInfo<O>['entrie']>
+    [K in keyof ObjectInfo<O>] : Array<ObjectInfo<O>[K]>
 }
 
 /**
