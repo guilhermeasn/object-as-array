@@ -107,7 +107,7 @@ export type ObjectAsArray<O extends object> = {
      * @param handler Callback function
      * @returns Object reorganized
      */
-    sort : <T extends keyof ObjectInfo<O>>(dataType : T, handler : Expose<SortHandler<O, T>>) => O
+    sort : <T extends keyof ObjectInfo<O>>(dataType : T, handler ?: Expose<SortHandler<O, T>>) => O
 
     /**
      * Calls the specified callback function for all the elements in an object. The return value of
