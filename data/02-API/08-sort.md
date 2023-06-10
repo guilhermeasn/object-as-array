@@ -11,7 +11,7 @@ Sorts the position of the object's elements
  - Typing:
 
 ```ts
-<T extends keyof ObjectInfo<O>>(dataType: T, handler: (a: ObjectInfo<O>[T], b: ObjectInfo<O>[T]) => number) => O
+<T extends keyof ObjectInfo<O>>(dataType: T, handler?: (a: ObjectInfo<O>[T], b: ObjectInfo<O>[T]) => number | boolean) => O
 ```
 
  - Example:
@@ -43,7 +43,7 @@ export default function example() {
  - Typing:
 
 ```ts
-<O extends object, T extends keyof ObjectInfo<O>>(object: O, dataType: T, handler: (a: ObjectInfo<O>[T], b: ObjectInfo<O>[T]) => number) => O
+<O extends object, T extends keyof ObjectInfo<O>>(object: O, dataType: T, handler?: (a: ObjectInfo<O>[T], b: ObjectInfo<O>[T]) => number | boolean) => O
 ```
 
  - Example:
