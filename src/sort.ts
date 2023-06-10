@@ -19,7 +19,7 @@ export function sort<O extends object, T extends keyof ObjectInfo<O>>(object : O
         const test = (typeof handler === 'function') ? handler(
             dataType === 'key' ? ka : dataType === 'value' ? va : [ka, va],
             dataType === 'key' ? kb : dataType === 'value' ? vb : [kb, vb]
-        ) : dataType === 'key' ? ka > kb : dataType === 'value' ? va > vb : ka > kb && va > vb;
+        ) : dataType === 'key' ? ka > kb : dataType === 'value' ? va > vb : ka > kb || va > vb;
 
         return (typeof test === 'number') ? test : test ? 1 : -1;
 
