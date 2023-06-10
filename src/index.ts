@@ -262,11 +262,11 @@ export type Expose<T> = (
  */
 export function objectAsArray<O extends object>(object : O) : ObjectAsArray<O> {
 
-    let length: number = Object.keys(object).length;
+    let length: number = toArray(object, 'key').length;
 
     function push(assign : Partial<O>) : number {
-        object = { ...object, ...assign };
-        length = Object.keys(object).length;
+        object = concat(object, assign);
+        length = toArray(object, 'key').length;
         return length;
     }
 
@@ -293,7 +293,7 @@ export function objectAsArray<O extends object>(object : O) : ObjectAsArray<O> {
         keyOf:        value => keyOf(object, value),
         lastKeyOf:    value => lastKeyOf(object, value),
         valueOf:      key => valueOf(object, key),
-        data:         () => ({ ...object }),
+        data:         () => concat({}, object),
         push,
         length
     }

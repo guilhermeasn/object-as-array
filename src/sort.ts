@@ -1,4 +1,5 @@
 import type { ObjectInfo } from "./index";
+import toArray from "./toArray";
 
 /**
  * Sort Handler Function Type
@@ -13,10 +14,31 @@ export type SortHandler<O extends object, T extends keyof ObjectInfo<O>> = (a : 
  * @returns Object reorganized
  */
 export function sort<O extends object, T extends keyof ObjectInfo<O>>(object : O, dataType : T, handler : SortHandler<O, T>) : O {
-    return <O>Object.fromEntries(Object.entries(object).sort(([ka, va], [kb, vb]) => handler(
-        dataType === 'key' ? ka : dataType === 'value' ? va : [ka, va],
-        dataType === 'key' ? kb : dataType === 'value' ? vb : [kb, vb]
-    )));
+    
+    const r : any = {};
+    const entries = toArray(object, 'entrie');
+
+    for(let a = 0; a < entries.length; a++) {
+        for(let b = a + 1; b < entries.length; b++) {
+
+            if(handler(
+                (dataType === 'key' ? entries[a][0] : dataType === 'value' ? entries[a][1] : entries[a]) as ObjectInfo<O>[T],
+                (dataType === 'key' ? entries[b][0] : dataType === 'value' ? entries[b][1] : entries[b]) as ObjectInfo<O>[T]
+            ) > 0) {
+                const temp = entries[b];
+                entries[b] = entries[a];
+                entries[a] = temp;
+            }
+
+        }
+    }
+
+    for(let [key, value] of entries) {
+        r[key] = value;
+    }
+
+    return r;
+
 }
 
 export default sort;

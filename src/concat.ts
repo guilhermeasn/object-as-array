@@ -6,10 +6,14 @@
  * @returns Composed object
  */
 export function concat<O extends object, A extends object>(object : O, assign : A) : O & A {
-    return {
-        ...object,
-        ...assign
-    };
+    
+    let concat : any = {};
+    
+    for(let key in object) concat[key] = object[key];
+    for(let key in assign) concat[key] = assign[key];
+
+    return concat;
+
 }
 
 export default concat;
