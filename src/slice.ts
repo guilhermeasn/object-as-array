@@ -7,7 +7,7 @@ import type { ArrayValuesType } from "./index";
  * @returns Portion of the object
  */
 export function slice<O extends object, K extends Array<keyof O>>(object : O, ...keys : K) : Pick<O, ArrayValuesType<K>> {
-    let r = {} as O;
+    let r : Partial<O> = {};
     keys.forEach(key => r[key] = object[key]);
     return r as Pick<O, ArrayValuesType<K>>;
 }
