@@ -7,7 +7,7 @@ import type { ArrayValuesType } from "./index";
  * @returns Returns missing or deleted keys
  */
 export function omit<O extends object, K extends Array<keyof O>>(object : O, ...keys : K) : Omit<O, ArrayValuesType<K>> {
-    let r = { ...object };
+    const r : Partial<O> = { ...object };
     keys.forEach(key => delete r[key]);
     return r as Omit<O, ArrayValuesType<K>>;
 }
