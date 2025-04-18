@@ -56,7 +56,7 @@ Available resources:
 
 Functional programming:
 
-```ts
+```js
 import objectAsArray from "object-as-array";
 
 export default function example() {
@@ -80,7 +80,7 @@ export default function example() {
 
 Modular programming:
 
-```ts
+```js
 import filter from "object-as-array/filter";
 
 export default function example() {
