@@ -108,4 +108,4 @@ export default function example() {
 
 ## License
 
-This project is under the MIT license - see the [LICENSE](https://github.com/guilhermeasn/mask-hooks/blob/master/LICENSE) file for details.
+This project is under the MIT license - see the [LICENSE](https://github.com/guilhermeasn/object-as-array/blob/master/LICENSE) file for details.
